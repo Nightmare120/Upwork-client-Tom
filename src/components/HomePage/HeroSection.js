@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import BackgroundIMG from "../../images/pleased-handsome-man-cheering-while-looking-his-mobile-phone-achieve-goal-app-smartphone-celebrating-standing-white-background.png";
+import BackgroundIMG from "../../images/home.svg";
 import EmailInput from "./EmailInput";
 import StatsBox from "./StatsBox";
 import { getHeroSection } from "../../api/HomePageAPI";
