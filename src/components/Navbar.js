@@ -9,7 +9,7 @@ export default function Navbar() {
 
     return (
         <div className="flex justify-between items-center">
-            <img src={Logo} alt="" srcset="" />
+            <img src={Logo} alt="" />
             <span className="lg:hidden">
                 <Button onClick={() => setOpen(true)}>
                     <UilBars />
@@ -17,7 +17,9 @@ export default function Navbar() {
             </span>
             <div
                 className={` bg-white gap-4 top-0 left-0 ${
-                    open ? "visible w-[100vw] h-[100vh]" : "invisible w-0 h-0"
+                    open
+                        ? "visible w-[100%] h-[100vh] box-border p-0"
+                        : "invisible w-0 h-0"
                 } absolute flex lg:visible  flex-col transition-all justify-center lg:justify-normal  lg:flex-row lg:static lg:w-max lg:h-max md:gap-14 items-center`}
             >
                 <span className="absolute top-5 right-5 lg:hidden">

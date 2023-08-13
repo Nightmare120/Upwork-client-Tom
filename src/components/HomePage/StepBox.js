@@ -8,6 +8,7 @@ export default function StepBox({
     stepTitle,
     stepDesc,
     reverse,
+    steps,
 }) {
     return (
         <div
@@ -22,19 +23,11 @@ export default function StepBox({
                 <Keyword>Step {stepNo}</Keyword>
                 <h3 className="text-2xl font-bold">{stepTitle}</h3>
                 <p className="text-slate-700 ">{stepDesc}</p>
-                <TickBox
-                    content={
-                        "It is a long established fact that a reader will be distracted by the readable content."
-                    }
-                />
-                <TickBox
-                    content={
-                        "It is a long established fact that a reader will be distracted."
-                    }
-                />
-                <TickBox
-                    content={"It is a long established fact that a reader."}
-                />
+                {steps &&
+                    steps.map((step, index) => (
+                        <TickBox content={step} key={index} />
+                    ))}
+
                 <Button>Start Free Trial</Button>
             </div>
         </div>

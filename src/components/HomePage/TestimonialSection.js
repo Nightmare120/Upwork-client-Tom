@@ -1,9 +1,19 @@
 import SectionHeader from "../SectionHeader";
-import Women1 from "../../images/Women1.png";
 import Quote from "../../images/Quote.svg";
 import Keyword from "../Keyword";
+import { getTestimonialSection } from "../../api/HomePageAPI";
+import { useEffect, useState } from "react";
+import { STRAPI_URL } from "../../api/Constant";
 
 export default function TestimonialSection() {
+    let [testimonials, setTestimonials] = useState(null);
+    async function a() {
+        let g = await getTestimonialSection();
+        setTestimonials(g.data);
+    }
+    useEffect(() => {
+        a();
+    }, []);
     return (
         <div>
             <SectionHeader
@@ -14,46 +24,50 @@ export default function TestimonialSection() {
                 }
             />
             <div className="mt-16 flex justify-between gap-9 flex-wrap lg:flex-nowrap">
-                <TestimonialBox />
-                <TestimonialBox />
-                <TestimonialBox />
+                {testimonials &&
+                    testimonials.map((a, index) => (
+                        <TestimonialBox key={index} data={a.attributes} />
+                    ))}
+                {/* <TestimonialBox />
+                <TestimonialBox /> */}
             </div>
         </div>
     );
 }
 
-function TestimonialBox() {
+function TestimonialBox({ data }) {
     return (
-        <div className="border p-9 flex flex-col gap-8 rounded-md">
+        <div className="border p-9 flex flex-col gap-8 rounded-md lg:w-1/3 m-auto">
             <div className="flex gap-3">
-                <img src={Women1} className="rounded-full w-14 h-14" alt="" />
+                <img
+                    src={STRAPI_URL + data.Picture.data.attributes.url}
+                    className="rounded-full w-14 h-14"
+                    alt=""
+                />
                 <div>
-                    <p>Chris Pustelak</p>
-                    <p className="text-slate-700 ">
-                        VP of Operations, Gurley leep Automotive Group
-                    </p>
+                    <p>{data.Name}</p>
+                    <p className="text-slate-700 ">{data.Position}</p>
                 </div>
             </div>
             <div>
                 <img src={Quote} className="m-auto" alt="" />
             </div>
             <p className="leading-8 text-xl text-center pb-3 border-b">
-                In 2022 alone, we have surpassed the past 3 years ( in leads,
-                Customers & net profit )
+                {data.Quote}
             </p>
             <div className="leading-8 text-center text-slate-700 pb-3 border-b">
                 <p className="text-4xl font-bold">
-                    <Keyword>39%</Keyword>
+                    <Keyword>{data.StatsData}</Keyword>
                 </p>
-                <p>Average net profit increase</p>
+                <p>{data.StatsDesc}</p>
             </div>
             <div>
                 <p className="text-center">Product Used:</p>
                 <div className="flex gap-4 flex-wrap justify-center mt-4">
-                    <ProductBox text={"Payments"} />
-                    <ProductBox text={"Inbox"} />
-                    <ProductBox text={"Reviews"} />
-                    <ProductBox text={"Webchat"} />
+                    {data &&
+                        data.Products.map((p, index) => (
+                            <ProductBox key={index} text={p} />
+                        ))}
                 </div>
             </div>
         </div>

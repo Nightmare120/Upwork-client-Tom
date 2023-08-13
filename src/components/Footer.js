@@ -88,8 +88,11 @@ function FooterLinkContainer({ heading, links }) {
     return (
         <div className="flex flex-col gap-4">
             <p className="text-xl">{heading}</p>
-            {links.map((link) => (
-                <div className="text-slate-700 cursor-pointer transition-all hover:text-black">
+            {links.map((link, index) => (
+                <div
+                    key={index}
+                    className="text-slate-700 cursor-pointer transition-all hover:text-black"
+                >
                     {link}
                 </div>
             ))}
