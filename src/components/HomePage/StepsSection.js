@@ -1,10 +1,10 @@
 import StepBox from "./StepBox";
-import Step1 from "../../images/Step1.png";
-import Step2 from "../../images/Step2.png";
+import Step1 from "../../images/Step1.svg";
+import Step2 from "../../images/Step2.svg";
 import Step3 from "../../images/Step3.png";
-import Step4 from "../../images/Step4.png";
-import Step5 from "../../images/Step5.png";
-import Step6 from "../../images/Step6.png";
+import Step4 from "../../images/Step4.svg";
+import Step5 from "../../images/Step5.svg";
+import Step6 from "../../images/Step6.svg";
 import { useEffect, useState } from "react";
 import { getSteps } from "../../api/HomePageAPI";
 
