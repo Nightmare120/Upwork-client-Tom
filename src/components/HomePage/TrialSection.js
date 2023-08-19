@@ -6,7 +6,7 @@ import { TickBox } from "./StepBox";
 export default function TrialSection() {
     return (
         <div
-            className={`flex gap-8 mt-16 mb-16 justify-between flex-wrap md:flex-nowrap`}
+            className={`flex gap-8 mt-36 mb-16 justify-between flex-wrap md:flex-nowrap`}
         >
             <div className="flex w-full md:w-[40vw] flex-col gap-4 justify-start items-start">
                 <h3 className="text-4xl font-bold  text-[#1C2752] leading-[1.7em]">

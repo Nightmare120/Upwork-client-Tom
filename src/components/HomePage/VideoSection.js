@@ -7,7 +7,7 @@ import Logo5 from "../../images/Logo5.svg";
 
 export default function VideoSection() {
     return (
-        <div>
+        <div className="my-36">
             <div className="relative ">
                 <img
                     src={Video_Image}

@@ -37,7 +37,7 @@ export default function TestimonialSection() {
 
 function TestimonialBox({ data }) {
     return (
-        <div className="border p-9 flex flex-col gap-8 rounded-md lg:w-1/3 m-auto">
+        <div className="border shadow-md p-9 flex flex-col gap-8 rounded-md lg:w-1/3 m-auto">
             <div className="flex gap-3">
                 <img
                     src={STRAPI_URL + data.Picture.data.attributes.url}

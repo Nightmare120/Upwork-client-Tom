@@ -4,6 +4,8 @@ import EmailInput from "./EmailInput";
 import StatsBox from "./StatsBox";
 import { getHeroSection } from "../../api/HomePageAPI";
 import HandleText from "../HandleText";
+import Dots from "../../images/dots.svg";
+import Rectangle from "../../images/Rectangle.svg";
 
 export default function HeroSection() {
     let [Heading, setHeading] = useState("");
@@ -22,7 +24,7 @@ export default function HeroSection() {
     }, []);
 
     return (
-        <div className="flex flex-col lg:flex-row my-[100px] overflow-x-hidden w-full gap-8">
+        <div className="flex flex-col lg:flex-row my-36 overflow-x-hidden w-full gap-8">
             <div className="w-full lg:w-[45vw] flex flex-col gap-6">
                 <h1 className="text-5xl font-bold ">
                     {" "}
@@ -41,10 +43,20 @@ export default function HeroSection() {
                     ))}
                 </div>
             </div>
-            <div className="w-full lg:w-[60vw]">
+            <div className=" w-full lg:w-[60vw]">
                 <img
-                    className="w-full lg:w-[60vw]"
+                    className="absolute w-[20%] h-[50%] -z-10 -mt-28 right-6 "
+                    src={Dots}
+                    alt=""
+                />
+                <img
+                    className="w-full  lg:w-[60vw]"
                     src={BackgroundIMG}
+                    alt=""
+                />
+                <img
+                    className="absolute w-[20%] h-[50%] -mt-24 -ml-20 -z-10 "
+                    src={Rectangle}
                     alt=""
                 />
             </div>

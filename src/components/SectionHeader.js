@@ -7,8 +7,8 @@ export default function SectionHeader({
 }) {
     return (
         <div
-            className={`flex flex-col gap-8 justify-center items-center ${
-                shouldNotTakeTopMargin ? "" : "mt-28"
+            className={`flex flex-col gap-8 justify-center items-center mb-36 ${
+                shouldNotTakeTopMargin ? "" : "mt-36"
             } `}
         >
             <div

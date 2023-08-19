@@ -2,6 +2,8 @@ import Button from "../Button";
 import Keyword from "../Keyword";
 import check from "../../images/check.svg";
 import Step3Detail from "../../images/Step3_detail.svg";
+import ArrowTopLeft from "../../images/ArrowTopLeft.svg";
+import ArrowTopRight from "../../images/ArrowTopRight.svg";
 
 export default function StepBox({
     image,
@@ -15,7 +17,7 @@ export default function StepBox({
         <div
             className={`flex ${
                 reverse ? "flex-row-reverse" : "flex-row"
-            } gap-8 mt-16 mb-16 justify-between flex-wrap lg:flex-nowrap`}
+            } gap-8 mt-36 mb-36 justify-between flex-wrap lg:flex-nowrap`}
         >
             <div className="w-full relative md:w-[37vw]">
                 <img src={image} alt="" />
@@ -26,6 +28,24 @@ export default function StepBox({
                         alt=""
                     />
                 )}
+                <div
+                    className={`${
+                        reverse ? "mr-auto ml-5" : "ml-auto mr-5"
+                    }  mt-16 w-fit `}
+                >
+                    <img
+                        src={reverse ? ArrowTopRight : ArrowTopLeft}
+                        className={`${reverse ? "ml-auto" : "mr-auto"}`}
+                        alt=""
+                    />
+                    <p
+                        className={`${
+                            reverse ? "mr-16" : "ml-16"
+                        } italic text-lg`}
+                    >
+                        {stepTitle}
+                    </p>
+                </div>
             </div>
             <div className="flex w-full md:w-[37vw] flex-col gap-4 justify-start items-start">
                 <Keyword>Step {stepNo}</Keyword>
