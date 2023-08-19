@@ -17,6 +17,7 @@ import SectionHeader from "../components/SectionHeader";
 import { getProblemSection, getSolutionSection } from "../api/HomePageAPI";
 import StepsSection from "../components/HomePage/StepsSection";
 import HandleText from "../components/HandleText";
+import pattern from "../images/Pattern.svg";
 
 export default function HomePAGE() {
     return (
@@ -57,11 +58,18 @@ function ProblemSection() {
         fun();
     }, []);
     return (
-        <SectionHeader
-            keyword={keyword}
-            title={<HandleText text={Heading} />}
-            paragraph={Description}
-        />
+        <>
+            <SectionHeader
+                keyword={keyword}
+                title={<HandleText text={Heading} />}
+                paragraph={Description}
+            />
+            <img
+                src={pattern}
+                className="absolute -mt-36 hidden sm:block sm:right-5 lg:right-16"
+                alt=""
+            />
+        </>
     );
 }
 
