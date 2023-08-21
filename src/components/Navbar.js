@@ -31,7 +31,22 @@ export default function Navbar() {
                 <Links>Resource Center</Links>
                 <Links>About</Links>
                 <Links>Contact Us</Links>
-                <Button>Sign Up</Button>
+                {/* <a href="https://locom.outseta.com/auth?widgetMode=register#o-anonymous"> */}
+                <Button
+                    onClick={() => {
+                        let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+width=600,height=800,left=500,top=500`;
+
+                        window.open(
+                            "https://locom.outseta.com/auth?widgetMode=register#o-anonymous",
+                            "test",
+                            params
+                        );
+                    }}
+                >
+                    Sign Up
+                </Button>
+                {/* </a> */}
             </div>
         </div>
     );

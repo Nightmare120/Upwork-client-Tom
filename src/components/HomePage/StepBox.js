@@ -1,7 +1,7 @@
 import Button from "../Button";
 import Keyword from "../Keyword";
 import check from "../../images/check.svg";
-import Step3Detail from "../../images/Step3_detail.svg";
+// import Step3Detail from "../../images/Step3_detail.svg";
 import ArrowTopLeft from "../../images/ArrowTopLeft.svg";
 import ArrowTopRight from "../../images/ArrowTopRight.svg";
 
@@ -21,13 +21,13 @@ export default function StepBox({
         >
             <div className="w-full relative md:w-[37vw]">
                 <img src={image} alt="" />
-                {Number(stepNo) === 3 && (
+                {/* {Number(stepNo) === 3 && (
                     <img
                         className="absolute -right-5 top-8 md:-right-16 md:top-16"
                         src={Step3Detail}
                         alt=""
                     />
-                )}
+                )} */}
                 <div
                     className={`${
                         reverse ? "mr-auto ml-5" : "ml-auto mr-5"
