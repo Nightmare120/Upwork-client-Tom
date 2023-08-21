@@ -1,8 +1,9 @@
-import Button from "./Button";
+import Button, { ButtonSecondary, ButtonWhite } from "./Button";
 import Logo from "../images/Locom_Logo.svg";
 import { useState } from "react";
 import { UilBars } from "@iconscout/react-unicons";
 import { UilMultiply } from "@iconscout/react-unicons";
+import Profile from "../images/profile (1).svg";
 
 export default function Navbar() {
     let [open, setOpen] = useState(window.screen.width > 768);
@@ -31,21 +32,51 @@ export default function Navbar() {
                 <Links>Resource Center</Links>
                 <Links>About</Links>
                 <Links>Contact Us</Links>
-                {/* <a href="https://locom.outseta.com/auth?widgetMode=register#o-anonymous"> */}
-                <Button
-                    onClick={() => {
-                        let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+                <div className="flex gap-2">
+                    <ButtonSecondary
+                        onClick={() => {
+                            let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
 width=600,height=800,left=500,top=500`;
 
-                        window.open(
-                            "https://locom.outseta.com/auth?widgetMode=register#o-anonymous",
-                            "test",
-                            params
-                        );
-                    }}
-                >
-                    Sign Up
-                </Button>
+                            window.open(
+                                " https://locom.outseta.com/auth?widgetMode=login#o-anonymous                            ",
+                                "test",
+                                params
+                            );
+                        }}
+                    >
+                        Login
+                    </ButtonSecondary>
+                    <Button
+                        onClick={() => {
+                            let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+width=600,height=800,left=500,top=500`;
+
+                            window.open(
+                                "https://locom.outseta.com/auth?widgetMode=register#o-anonymous",
+                                "test",
+                                params
+                            );
+                        }}
+                    >
+                        Sign Up
+                    </Button>
+                    <div
+                        className="flex justify-center items-center border-l-2 pl-4 cursor-pointer"
+                        onClick={() => {
+                            let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+width=600,height=800,left=500,top=500`;
+
+                            window.open(
+                                "https://locom.outseta.com/profile?#o-authenticatedanonymous",
+                                "test",
+                                params
+                            );
+                        }}
+                    >
+                        <img className="w-8 h-8" src={Profile} alt="" />
+                    </div>
+                </div>
                 {/* </a> */}
             </div>
         </div>
