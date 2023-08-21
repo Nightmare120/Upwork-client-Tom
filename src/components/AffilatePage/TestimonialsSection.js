@@ -28,6 +28,16 @@ export default function TestimonialSection() {
         swiperElRef.current.addEventListener("slidechange", (e) => {});
     }, []);
 
+    function next() {
+        let swiperEl = document.querySelector("swiper-container");
+        swiperEl.swiper.slideNext();
+    }
+
+    function prev() {
+        let swiperEl = document.querySelector("swiper-container");
+        swiperEl.swiper.slidePrev();
+    }
+
     return (
         <>
             <SectionHeader
@@ -39,7 +49,19 @@ export default function TestimonialSection() {
                     </p>
                 }
             />
-            <div className="w-full h-8"></div>
+            {/* <div className="w-full h-8"></div> */}
+            <span
+                className="hidden md:block absolute left-10 mt-20 cursor-pointer "
+                onClick={prev}
+            >
+                <NavigatorLeft />
+            </span>
+            <span
+                className="hidden md:block absolute right-10 mt-20 cursor-pointer "
+                onClick={next}
+            >
+                <NavigatorRight />
+            </span>
             <swiper-container
                 ref={swiperElRef}
                 slides-per-view="1"
@@ -51,39 +73,14 @@ export default function TestimonialSection() {
                             <TestimonyBox data={a.attributes} />
                         </swiper-slide>
                     ))}
-
-                {/* <swiper-slide>
-                    <TestimonyBox />
-                </swiper-slide>
-                <swiper-slide>
-                    <TestimonyBox />
-                </swiper-slide>
-                <swiper-slide>
-                    <TestimonyBox />
-                </swiper-slide>
-                <swiper-slide>
-                    <TestimonyBox />
-                </swiper-slide> */}
             </swiper-container>
-            {/* <NavigatorLeft
-                onclick={() => {
-                    console.log(swiperElRef);
-                }}
-            /> */}
-            {/* <NavigatorRight /> */}
         </>
     );
 }
 
-function NavigatorLeft(onclick) {
-    // const swiper = useSwiper();
-
+function NavigatorLeft() {
     return (
-        <div
-            onClick={() => {
-                console.log(onclick());
-            }}
-        >
+        <div>
             <img src={ArrowLeft} alt="" />;
         </div>
     );

@@ -42,7 +42,7 @@ export async function getTestimonials() {
 
 export async function getStepsSection() {
     let res = await axios.get(
-        `${STRAPI_URL}/api/affilate-step-sections?populate=*`,
+        `${STRAPI_URL}/api/affilate-step-sections?populate=*&sort=id`,
         HEADERS
     );
     return res.data;

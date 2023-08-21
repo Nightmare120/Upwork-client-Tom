@@ -40,7 +40,7 @@ export async function getTestimonialSection() {
 }
 export async function getSteps() {
     let res = await axios.get(
-        `${STRAPI_URL}/api/home-page-step-sections`,
+        `${STRAPI_URL}/api/home-page-step-sections?sort=Number`,
         HEADERS
     );
     return res.data;

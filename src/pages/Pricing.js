@@ -1,5 +1,4 @@
 import Button from "../components/Button";
-import Keyword from "../components/Keyword";
 import SectionHeader from "../components/SectionHeader";
 import FAQSection from "../components/AffilatePage/FAQSecton";
 import SupportSection from "../components/PricingPage/SupportSection";
@@ -12,6 +11,7 @@ import HandleText from "../components/HandleText";
 import { useEffect, useState } from "react";
 import { getHeroSection } from "../api/PricingAPI";
 import StatsBox from "../components/HomePage/StatsBox";
+import OurTeam from "../components/PricingPage/OurTeam";
 
 export default function PricingPAGE() {
     let [Heading, setHeading] = useState("");
@@ -42,24 +42,9 @@ export default function PricingPAGE() {
                 </div>
             </div>
 
-            <div className="flex p-8 justify-between mt-16 rounded-lg">
-                <div>
-                    <p>Our Team Members</p>
-                    <p className="w-1/2 text-3xl font-bold text-blue-500">
-                        $18k
-                    </p>
-                    <div className="flex mt-4 gap-4">
-                        <StatsBox
-                            title={"350+"}
-                            detail={"Over 500 business powered with us"}
-                        />
-                        <StatsBox
-                            title={"4.8"}
-                            detail={"Rating on google play and app store"}
-                        />
-                    </div>
-                </div>
-                <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-8 md:flex-row p-8 justify-between mt-16 rounded-lg">
+                <OurTeam />
+                <div className="flex flex-col w-fit h-fit p-8 rounded-md shadow-md gap-8">
                     <div className="flex gap-4 items-center">
                         {" "}
                         <span>Monthly</span>
@@ -72,7 +57,13 @@ export default function PricingPAGE() {
                             Save 20% off
                         </span>
                     </div>
-                    <Button>Start 14 day free trial</Button>
+                    <div className="w-full lg:w-[60%]">
+                        <Button>Start 14 day free trial</Button>
+                        <p className="text-sm mt-4 leading-7 underline text-slate-700 ">
+                            Try Locom for free for 14 days with no credit card
+                            required
+                        </p>
+                    </div>
                 </div>
             </div>
             <PricingSection />
@@ -81,6 +72,15 @@ export default function PricingPAGE() {
             <Banner />
             <AllInOne />
             <FAQSection />
+            <div className="flex flex-col justify-center items-center gap-4 my-16">
+                <Button>Start 7-days free trial</Button>
+                <p
+                    className="text-center 
+underline text-slate-700 "
+                >
+                    30-Day Money Back Guarantee
+                </p>
+            </div>
         </>
     );
 }

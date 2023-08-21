@@ -1,16 +1,16 @@
 import StepBox from "./StepBox";
-// import Step1 from "../../images/Group 2569.png";
-// import Step2 from "../../images/Step2.png";
-// import Step3 from "../../images/Step3.png";
-// import Step4 from "../../images/Step4.png";
-// import Step5 from "../../images/Step5.png";
-// import Step6 from "../../images/Step6.png";
-import Step1 from "../../images/Step1.svg";
-import Step2 from "../../images/Step2.svg";
+import Step1 from "../../images/Step1-transformed.png";
+import Step2 from "../../images/Step2-transformed.png";
 import Step3 from "../../images/Step3.png";
-import Step4 from "../../images/Step4.svg";
-import Step5 from "../../images/Step5.svg";
-import Step6 from "../../images/Step6.svg";
+import Step4 from "../../images/Step4-transformed.png";
+import Step5 from "../../images/Step5-transformed.png";
+import Step6 from "../../images/Step6-transformed.png";
+// import Step1 from "../../images/Step1.svg";
+// import Step2 from "../../images/Step2.svg";
+// import Step3 from "../../images/Step3.png";
+// import Step4 from "../../images/Step4.svg";
+// import Step5 from "../../images/Step5.svg";
+// import Step6 from "../../images/Step6.svg";
 import { useEffect, useState } from "react";
 import { getSteps } from "../../api/HomePageAPI";
 
@@ -22,6 +22,7 @@ export default function StepsSection() {
         let fun = async () => {
             let Data = await getSteps();
             setSteps(Data.data);
+            console.log(Data.data);
         };
 
         fun();

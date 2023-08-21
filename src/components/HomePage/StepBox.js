@@ -31,7 +31,7 @@ export default function StepBox({
                 <div
                     className={`${
                         reverse ? "mr-auto ml-5" : "ml-auto mr-5"
-                    }  mt-16 w-fit `}
+                    }  mt-12 w-fit `}
                 >
                     <img
                         src={reverse ? ArrowTopRight : ArrowTopLeft}
@@ -41,7 +41,7 @@ export default function StepBox({
                     <p
                         className={`${
                             reverse ? "mr-16" : "ml-16"
-                        } italic text-lg`}
+                        } italic text-lg  text-slate-700 kalam`}
                     >
                         {stepTitle}
                     </p>

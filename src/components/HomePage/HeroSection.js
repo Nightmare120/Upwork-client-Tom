@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import BackgroundIMG from "../../images/home.svg";
+import BackgroundIMG from "../../images/home-transformed.png";
 import EmailInput from "./EmailInput";
 import StatsBox from "./StatsBox";
 import { getHeroSection } from "../../api/HomePageAPI";
