@@ -3,15 +3,17 @@ import "./PrivacyPolicy.css";
 export default function PrivacyPolicy() {
     return (
         <div className="mt-16">
-            <div className="policy">
-                <h1>Privacy Policy</h1>
-                <p>Last updated: August 21, 2023</p>
-                <p>
-                    This Privacy Policy describes Our policies and procedures on
-                    the collection, use and disclosure of Your information when
-                    You use the Service and tells You about Your privacy rights
-                    and how the law protects You.
-                </p>
+            <div className="policy leading-7">
+                <div className="bg-slate-100 p-10 rounded-lg border-dotted border-4 mb-8 border-blue-500">
+                    <h1 className="mt-0">Privacy Policy</h1>
+                    <p>Last updated: August 21, 2023</p>
+                    <p className="text-slate-700">
+                        This Privacy Policy describes Our policies and
+                        procedures on the collection, use and disclosure of Your
+                        information when You use the Service and tells You about
+                        Your privacy rights and how the law protects You.
+                    </p>
+                </div>
                 <h1>Interpretation and Definitions</h1>
                 <h2>Interpretation</h2>
                 <p>

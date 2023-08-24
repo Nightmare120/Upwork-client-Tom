@@ -12,7 +12,7 @@ export default function PriceBox({ data }) {
                         ? "1px solid rgb(59 130 246)"
                         : "1px solid #F6F6F6",
             }}
-            className="bg-[#F6F6F6]  p-8 rounded-3xl flex flex-col gap-4"
+            className="bg-[#F6F6F6] p-4 md:p-8 rounded-3xl flex flex-col gap-4"
         >
             <h3 className="text-2xl font-bold flex justify-between">
                 {data.type}

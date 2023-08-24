@@ -14,7 +14,7 @@ export default function VideoSection() {
     }, []);
 
     return (
-        <div className="mt-8">
+        <div className="mt-8 flex justify-center items-center flex-wrap md:block">
             {data &&
                 data.map((video, index) => (
                     <VideoBox

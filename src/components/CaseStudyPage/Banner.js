@@ -24,7 +24,7 @@ export default function Banner() {
         fun();
     }, []);
     return (
-        <div className="relative mt-16 -left-[80px] w-[100vw] bg-gradient-to-r to-[#4563FF] from-[#58AFFF]">
+        <div className="relative mt-16 -left-[2rem] md:-left-[80px] w-[100vw] bg-gradient-to-r to-[#4563FF] from-[#58AFFF]">
             <div
                 className="flex flex-col lg:flex-row text-white justify-center items-center gap-8 p-16"
                 style={{ backgroundImage: `url('${Waves}')` }}

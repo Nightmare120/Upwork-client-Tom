@@ -4,12 +4,14 @@ export default function Terms() {
     return (
         <div className="mt-16">
             <div className="policy">
-                <h1>Terms and Conditions</h1>
-                <p>Last updated: August 23, 2023</p>
-                <p>
-                    Please read these terms and conditions carefully before
-                    using Our Service.
-                </p>
+                <div className="bg-slate-100 p-10 rounded-lg border-dotted border-4 mb-8 border-blue-500">
+                    <h1>Terms and Conditions</h1>
+                    <p>Last updated: August 23, 2023</p>
+                    <p>
+                        Please read these terms and conditions carefully before
+                        using Our Service.
+                    </p>
+                </div>
                 <h1>Interpretation and Definitions</h1>
                 <h2>Interpretation</h2>
                 <p>

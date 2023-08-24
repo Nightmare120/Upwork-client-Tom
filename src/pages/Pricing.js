@@ -43,9 +43,9 @@ export default function PricingPAGE() {
                 </div>
             </div>
 
-            <div className="flex flex-col mb-16 gap-8 md:flex-row p-8 justify-between mt-16 rounded-lg">
+            <div className="flex flex-col mb-16 gap-8 md:flex-row p-8 justify-center md:justify-between mt-16 rounded-lg">
                 <OurTeam />
-                <div className="flex flex-col w-fit h-fit p-8 rounded-md shadow-md gap-8">
+                <div className="flex m-auto flex-col w-fit h-fit p-8 rounded-md shadow-md gap-8">
                     <div className="flex gap-4 items-center">
                         {" "}
                         <span>Monthly</span>

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
     return (
-        <div className="bg-[#F9F9F9] relative  -left-[80px] w-[100vw]   px-4 py-4 md:px-[60px] md:py-9 overflow-x-hidden">
+        <div className="bg-[#F9F9F9] relative  -left-[2rem] md:-left-[80px] w-[100vw]   px-4 py-4 md:px-[60px] md:py-9 overflow-x-hidden">
             <div className=" gap-16 flex-wrap hidden">
                 <div className="flex flex-col gap-8">
                     <img src={Logo} alt="" />
@@ -40,7 +40,7 @@ export default function Footer() {
                     />
                 </div>
             </div>
-            <div className="flex justify-between mt-16 border-t pt-4">
+            <div className="flex justify-between gap-4 flex-wrap mt-16 border-t pt-4">
                 <p className="text-slate-700 ">
                     ©2022 <Keyword>Locom</Keyword>. All right reserved
                 </p>

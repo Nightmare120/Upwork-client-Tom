@@ -27,7 +27,7 @@ export default function PricingSection() {
                 The question is, when will you?`}
                 />
             </div>
-            <div className="flex flex-wrap lg:flex-nowrap gap-16 px-8 mt-24">
+            <div className="flex flex-wrap lg:flex-nowrap gap-16 justify-center md:justify-normal items-center md:items-start md:px-8 mt-24">
                 {data &&
                     data.map((e, index) => (
                         <PriceBox key={index} data={e.attributes} />
