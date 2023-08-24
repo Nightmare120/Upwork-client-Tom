@@ -5,6 +5,8 @@ import PricingPAGE from "./pages/Pricing";
 import CaseStudyPAGE from "./pages/CaseStudyPage";
 import HomePAGE from "./pages/HomePage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/TermsCondition";
 
 function App() {
     return (
@@ -21,6 +23,16 @@ function App() {
                         ></Route>
                         <Route
                             exact
+                            path="/privacy-policy"
+                            element={<PrivacyPolicy />}
+                        ></Route>
+                        <Route
+                            exact
+                            path="/terms-and-conditions"
+                            element={<Terms />}
+                        ></Route>
+                        <Route
+                            exact
                             path="/casestudy"
                             element={<CaseStudyPAGE />}
                         ></Route>
@@ -30,9 +42,9 @@ function App() {
                             element={<AffilatePAGE />}
                         ></Route>
                     </Routes>
+                    <Footer />
                 </Router>
             </div>
-            <Footer />
         </>
     );
 }

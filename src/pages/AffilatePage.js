@@ -26,14 +26,16 @@ export default function AffilatePAGE() {
     return (
         <>
             <div className="mt-20 lg:mt-32">
-                <SectionHeader
-                    notShowKeyword
-                    title={<HandleText text={Heading} />}
-                    shouldNotTakeTopMargin
-                    paragraph={Paragraph}
-                />
-                <div className="flex gap-4  flex-col md:flex-row md:justify-center md:items-center md:gap-8 mt-8">
-                    <Button>{buttonText}</Button>
+                <div className="w-full md:w-[85vw] m-auto lg:w-[70vw]">
+                    <SectionHeader
+                        notShowKeyword
+                        title={<HandleText text={Heading} />}
+                        shouldNotTakeTopMargin
+                        paragraph={Paragraph}
+                    />
+                    <div className="flex gap-4  flex-col md:flex-row md:justify-center md:items-center md:gap-8 mt-8">
+                        <Button>{buttonText}</Button>
+                    </div>
                 </div>
             </div>
             <SectionHeader

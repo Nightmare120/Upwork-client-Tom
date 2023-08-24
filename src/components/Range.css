@@ -1,0 +1,50 @@
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 70%;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    background: #e7edff;
+    height: 0.7rem;
+    border-radius: 10px;
+}
+
+/******** Firefox ********/
+input[type="range"]::-moz-range-track {
+      border-radius: 10px;
+    background: #e7edff;
+    height: 0.7rem;
+  }
+
+
+  /***** Thumb Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -8px; /* Centers thumb on the track */
+    border-radius: 9999px;
+    height: 2rem;
+    width: 2rem;    
+    background-image: linear-gradient(to right, #58AFFE,  #4563FF);
+    border: 2px solid white; 
+  outline: 5px solid #4563FF;
+ }
+
+ /***** Thumb Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    border-radius: 9999px;
+    margin-top: -12px; /* Centers thumb on the track */
+    background-image: linear-gradient(to right, #58AFFE,  #4563FF);
+    height: 2rem;
+    width: 2rem;    
+    border: 2px solid white; 
+  outline: 5px solid #4563FF;
+
+ }

@@ -43,6 +43,7 @@ export default function PriceBox({ data }) {
                     <TickBox content={e.text} key={index} wrong={e.wrong} />
                 ))}
 
+            <div className="w-full h-2 mt-auto"></div>
             <div className="w-full h-2 my-4 border-t-2"></div>
 
             <Button>Start 7-days free trial</Button>

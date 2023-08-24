@@ -23,7 +23,7 @@ export default function StepsSection() {
         fun();
     }, []);
     return (
-        <>
+        <div className="flex flex-col gap-36 mt-24">
             {steps &&
                 steps.map((step, index) => (
                     <StepBox
@@ -36,6 +36,6 @@ export default function StepsSection() {
                         reverse={index % 2 !== 0}
                     />
                 ))}
-        </>
+        </div>
     );
 }

@@ -17,7 +17,7 @@ export default function StepBox({
         <div
             className={`flex ${
                 reverse ? "flex-row-reverse" : "flex-row"
-            } gap-8 mt-36 mb-36 justify-between flex-wrap lg:flex-nowrap`}
+            } gap-8  justify-between flex-wrap lg:flex-nowrap`}
         >
             <div className="w-full relative md:w-[37vw]">
                 <img src={image} alt="" />
@@ -29,9 +29,9 @@ export default function StepBox({
                     />
                 )} */}
                 <div
-                    className={`${
-                        reverse ? "mr-auto ml-5" : "ml-auto mr-5"
-                    }  mt-12 w-fit `}
+                    className={`${reverse ? "mr-auto ml-5" : "ml-auto mr-5"}  ${
+                        stepNo === 5 ? "mt-0" : "mt-12"
+                    } w-fit `}
                 >
                     <img
                         src={reverse ? ArrowTopRight : ArrowTopLeft}

@@ -26,7 +26,7 @@ export default function HeroSection() {
     return (
         <div className="flex flex-col lg:flex-row my-36 overflow-x-hidden w-full gap-8">
             <div className="w-full lg:w-[45vw] flex flex-col gap-6">
-                <h1 className="text-5xl font-bold ">
+                <h1 className="text-5xl text-[#060C3C] font-bold ">
                     {" "}
                     <HandleText text={Heading} />
                 </h1>

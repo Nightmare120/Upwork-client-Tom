@@ -31,6 +31,14 @@ export async function getAdvantageSection() {
     );
     return res.data;
 }
+
+export async function getHomePageTrialSection() {
+    let res = await axios.get(
+        `${STRAPI_URL}/api/home-page-trial-section       `,
+        HEADERS
+    );
+    return res.data;
+}
 export async function getTestimonialSection() {
     let res = await axios.get(
         `${STRAPI_URL}/api/testimonials?populate=*`,

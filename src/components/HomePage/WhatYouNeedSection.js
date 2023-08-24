@@ -19,13 +19,13 @@ export default function WhatYouNeedSection() {
         fun();
     }, []);
     return (
-        <div className="flex flex-col  justify-center items-center mt-28">
+        <div className="flex flex-col mt-16 m-auto justify-center items-center ">
             <div className="flex gap-8 justify-center items-center">
                 <div className="flex justify-center items-center pt-40 box-border">
                     {" "}
                     <img
                         src={pattern}
-                        className="hidden md:block"
+                        className="hidden md:block lg:block"
                         style={{ transform: "scaleX(-1)" }}
                         alt=""
                     />{" "}
@@ -59,7 +59,7 @@ export default function WhatYouNeedSection() {
 
 function StatBox({ title, para }) {
     return (
-        <div className="flex flex-col gap-7 text-center w-full md:w-2/6">
+        <div className="flex flex-col gap-7 text-center w-full md:w-[29%]">
             <h3 className=" relative font-bold text-4xl text-center text-blue-500">
                 <p className="w-fit m-auto ">
                     {title}{" "}

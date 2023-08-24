@@ -10,7 +10,6 @@ import TestimonialSection from "../components/HomePage/TestimonialSection";
 import HandleText from "../components/HandleText";
 import { useEffect, useState } from "react";
 import { getHeroSection } from "../api/PricingAPI";
-import StatsBox from "../components/HomePage/StatsBox";
 import OurTeam from "../components/PricingPage/OurTeam";
 
 export default function PricingPAGE() {
@@ -31,18 +30,20 @@ export default function PricingPAGE() {
     return (
         <>
             <div className="mt-20 lg:mt-32">
-                <SectionHeader
-                    notShowKeyword
-                    title={<HandleText text={Heading} />}
-                    shouldNotTakeTopMargin
-                    paragraph={Paragraph}
-                />
-                <div className="flex gap-4  flex-col md:flex-row md:justify-center md:items-center md:gap-8 mt-8">
-                    <Button>{ButtonText}</Button>
+                <div className="w-full md:w-[85vw] m-auto lg:w-[50vw]">
+                    <SectionHeader
+                        notShowKeyword
+                        title={<HandleText text={Heading} />}
+                        shouldNotTakeTopMargin
+                        paragraph={Paragraph}
+                    />
+                    <div className="flex gap-4  flex-col md:flex-row md:justify-center md:items-center md:gap-8 mt-8">
+                        <Button>{ButtonText}</Button>
+                    </div>
                 </div>
             </div>
 
-            <div className="flex flex-col gap-8 md:flex-row p-8 justify-between mt-16 rounded-lg">
+            <div className="flex flex-col mb-16 gap-8 md:flex-row p-8 justify-between mt-16 rounded-lg">
                 <OurTeam />
                 <div className="flex flex-col w-fit h-fit p-8 rounded-md shadow-md gap-8">
                     <div className="flex gap-4 items-center">
@@ -66,6 +67,7 @@ export default function PricingPAGE() {
                     </div>
                 </div>
             </div>
+            <div className="border-b-2 w-full h-2"></div>
             <PricingSection />
             <TestimonialSection />
             <SupportSection />

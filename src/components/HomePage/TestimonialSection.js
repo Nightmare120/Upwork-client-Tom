@@ -16,13 +16,15 @@ export default function TestimonialSection() {
     }, []);
     return (
         <div>
-            <SectionHeader
-                keyword={"Testimonials"}
-                title={"This is why Customers Loves Locom"}
-                paragraph={
-                    "We know what works, what doesn't and we have helped many local businesses before."
-                }
-            />
+            <div className="w-full md:w-[85vw] m-auto lg:w-[40vw]">
+                <SectionHeader
+                    keyword={"Testimonials"}
+                    title={"This is why Customers Loves Locom"}
+                    paragraph={
+                        "We know what works, what doesn't and we have helped many local businesses before."
+                    }
+                />
+            </div>
             <div className="mt-16 flex justify-between gap-9 flex-wrap lg:flex-nowrap">
                 {testimonials &&
                     testimonials.map((a, index) => (

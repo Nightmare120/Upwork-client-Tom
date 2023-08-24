@@ -26,13 +26,15 @@ export default function HomePAGE() {
             <VideoSection />
             <ProblemSection />
             <SolutionSection />
-            <SectionHeader
-                keyword={"Features"}
-                title={"How it Works?"}
-                paragraph={
-                    "It is a long established fact that a reader will be distracted by the readable content."
-                }
-            />
+            <div className="w-full md:w-[85vw] m-auto lg:w-[40vw]">
+                <SectionHeader
+                    keyword={"Features"}
+                    title={"How it Works?"}
+                    paragraph={
+                        "It is a long established fact that a reader will be distracted by the readable content."
+                    }
+                />
+            </div>
             <StepsSection />
             <WhatYouNeedSection />
             <TestimonialSection />
@@ -57,8 +59,9 @@ function ProblemSection() {
 
         fun();
     }, []);
+    console.log(pattern);
     return (
-        <>
+        <div className="w-full md:w-[85%] m-auto lg:w-[70vw]">
             <SectionHeader
                 keyword={keyword}
                 title={<HandleText text={Heading} />}
@@ -66,10 +69,10 @@ function ProblemSection() {
             />
             <img
                 src={pattern}
-                className="absolute -mt-36 hidden sm:block sm:right-5 lg:right-16"
+                className="absolute -mt-36 lg:block hidden sm:block sm:right-5 lg:right-16"
                 alt=""
             />
-        </>
+        </div>
     );
 }
 
@@ -90,13 +93,13 @@ function SolutionSection() {
         fun();
     }, []);
     return (
-        <>
+        <div className="w-full md:w-[85%] m-auto lg:w-[70vw]">
             <SectionHeader
                 keyword={"Solution"}
                 title={<HandleText text={Heading} />}
                 paragraph={Description}
             />
             <ExperienceBox data={Data} />
-        </>
+        </div>
     );
 }

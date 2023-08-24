@@ -51,13 +51,13 @@ export default function TestimonialSection() {
             />
             {/* <div className="w-full h-8"></div> */}
             <span
-                className="hidden md:block absolute left-10 mt-20 cursor-pointer "
+                className="hidden md:block lg:block absolute left-10 mt-20 cursor-pointer "
                 onClick={prev}
             >
                 <NavigatorLeft />
             </span>
             <span
-                className="hidden md:block absolute right-10 mt-20 cursor-pointer "
+                className="hidden md:block lg:block absolute right-10 mt-20 cursor-pointer "
                 onClick={next}
             >
                 <NavigatorRight />
