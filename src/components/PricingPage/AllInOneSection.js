@@ -39,7 +39,7 @@ function Box({ data }) {
     return (
         <div
             style={{}}
-            className="shadow-md w-full p-10 rounded-md border-2 md:w-[40%] flex flex-col gap-4 justify-center items-center text-center"
+            className="shadow-md w-full p-10 rounded-md border-2 md:w-[40%] lg:w-[30%] flex flex-col gap-4 justify-center items-center text-center"
         >
             <img src={data.image} alt="" />
             <h3 className="text-2xl text-[#1C2752] font-bold">
