@@ -1,10 +1,16 @@
 import "./ToggleButton.css";
 
-export default function ToggleButton() {
+export default function ToggleButton({ value, setValue }) {
     return (
         <span>
             <label class="switch">
-                <input type="checkbox" />
+                <input
+                    value={!value}
+                    onChange={(e) => {
+                        setValue(!e.target.checked);
+                    }}
+                    type="checkbox"
+                />
                 <span class="slider round"></span>
             </label>
         </span>

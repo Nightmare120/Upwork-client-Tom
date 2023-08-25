@@ -44,7 +44,14 @@ export default function TrialSection() {
                 <Input placeholder={"Example.com"} />
                 <p className="text-[#384268] font-bold  ">Email</p>
                 <Input placeholder={"Your business email"} />
-                <Button>Start Free Trial</Button>
+                <Button
+                    onClick={() => {
+                        window.location =
+                            "https://8okzn8zrvfp.typeform.com/to/CGtW7ylQ";
+                    }}
+                >
+                    Start Free Trial
+                </Button>
                 <p
                     className="text-center 
 underline text-slate-700 "

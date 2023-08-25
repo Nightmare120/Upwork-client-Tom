@@ -12,7 +12,7 @@ export default function PriceBox({ data }) {
                         ? "1px solid rgb(59 130 246)"
                         : "1px solid #F6F6F6",
             }}
-            className="bg-[#F6F6F6] p-4 md:p-8 rounded-3xl flex flex-col gap-4"
+            className="bg-[#F6F6F6] w-full lg:w-5/12 p-4 md:p-8 rounded-3xl flex flex-col gap-4"
         >
             <h3 className="text-2xl font-bold flex justify-between">
                 {data.type}
@@ -46,7 +46,14 @@ export default function PriceBox({ data }) {
             <div className="w-full h-2 mt-auto"></div>
             <div className="w-full h-2 my-4 border-t-2"></div>
 
-            <Button>Start 7-days free trial</Button>
+            <Button
+                onClick={() => {
+                    window.location =
+                        "https://8okzn8zrvfp.typeform.com/to/CGtW7ylQ";
+                }}
+            >
+                Start 7-days free trial
+            </Button>
         </div>
     );
 }

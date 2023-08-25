@@ -14,7 +14,11 @@ import SectionHeader from "../components/SectionHeader";
 // import Step4 from "../images/Step4.png";
 // import Step5 from "../images/Step5.png";
 // import Step6 from "../images/Step6.png";
-import { getProblemSection, getSolutionSection } from "../api/HomePageAPI";
+import {
+    getProblemSection,
+    getSolutionSection,
+    getStepTextSection,
+} from "../api/HomePageAPI";
 import StepsSection from "../components/HomePage/StepsSection";
 import HandleText from "../components/HandleText";
 import pattern from "../images/Pattern.svg";
@@ -26,15 +30,7 @@ export default function HomePAGE() {
             <VideoSection />
             <ProblemSection />
             <SolutionSection />
-            <div className="w-full md:w-[85vw] m-auto lg:w-[40vw]">
-                <SectionHeader
-                    keyword={"Features"}
-                    title={"How it Works?"}
-                    paragraph={
-                        "It is a long established fact that a reader will be distracted by the readable content."
-                    }
-                />
-            </div>
+            <StepTextSection />
             <StepsSection />
             <WhatYouNeedSection />
             <TestimonialSection />
@@ -69,7 +65,7 @@ function ProblemSection() {
             />
             <img
                 src={pattern}
-                className="absolute -mt-36 lg:block hidden sm:block sm:right-5 lg:right-16"
+                className="absolute -mt-30 lg:block hidden sm:block sm:right-5 lg:right-36"
                 alt=""
             />
         </div>
@@ -100,6 +96,33 @@ function SolutionSection() {
                 paragraph={Description}
             />
             <ExperienceBox data={Data} />
+        </div>
+    );
+}
+
+function StepTextSection() {
+    let [heading, setHeading] = useState("");
+    let [paragraph, setParagraph] = useState("");
+    let [keyword, setKeyword] = useState();
+
+    useEffect(() => {
+        let fun = async () => {
+            let Data = await getStepTextSection();
+            let { heading, paragraph, keyword } = Data.data.attributes;
+            setHeading(heading);
+            setParagraph(paragraph);
+            setKeyword(keyword);
+        };
+
+        fun();
+    }, []);
+    return (
+        <div className="w-full md:w-[85%] m-auto lg:w-[70vw]">
+            <SectionHeader
+                keyword={keyword}
+                title={<HandleText text={heading} />}
+                paragraph={paragraph}
+            />
         </div>
     );
 }

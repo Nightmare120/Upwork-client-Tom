@@ -27,6 +27,24 @@ export async function getBEcomeAffilateSection() {
     return res.data;
 }
 
+export async function getStepTextSection() {
+    let res = await axios.get(
+        `${STRAPI_URL}/api/affiliate-step-text
+        `,
+        HEADERS
+    );
+    return res.data;
+}
+
+export async function getReferrals() {
+    let res = await axios.get(
+        `${STRAPI_URL}/api/affilate-referrals-section
+        `,
+        HEADERS
+    );
+    return res.data;
+}
+
 export async function getFAQs() {
     let res = await axios.get(`${STRAPI_URL}/api/faqs?populate=*`, HEADERS);
     return res.data;

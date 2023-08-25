@@ -4,13 +4,16 @@ import { useState } from "react";
 import { UilBars } from "@iconscout/react-unicons";
 import { UilMultiply } from "@iconscout/react-unicons";
 import Profile from "../images/profile (1).svg";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
     let [open, setOpen] = useState(window.screen.width > 768);
 
     return (
         <div className="flex justify-between items-center">
-            <img src={Logo} alt="" />
+            <Link to={"/"}>
+                <img src={Logo} alt="" />
+            </Link>
             <span className="lg:hidden">
                 <Button onClick={() => setOpen(true)}>
                     <UilBars />
@@ -28,10 +31,9 @@ export default function Navbar() {
                         <UilMultiply />
                     </Button>
                 </span>
-                <Links>Pricing</Links>
-                <Links>Resource Center</Links>
-                <Links>About</Links>
-                <Links>Contact Us</Links>
+                <Links to={"/pricing"}>Pricing</Links>
+                <Links to={"/partners"}>Partner Program</Links>
+
                 <div className="flex gap-2">
                     <ButtonSecondary
                         onClick={() => {
@@ -83,10 +85,12 @@ width=600,height=800,left=500,top=500`;
     );
 }
 
-function Links({ children }) {
+function Links({ children, to }) {
     return (
-        <span className="text-slate-700 cursor-pointer transition-all hover:text-black">
-            {children}
-        </span>
+        <Link to={to}>
+            <span className="text-slate-700 cursor-pointer transition-all hover:text-black">
+                {children}
+            </span>
+        </Link>
     );
 }

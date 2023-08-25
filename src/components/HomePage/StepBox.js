@@ -48,7 +48,9 @@ export default function StepBox({
                 </div>
             </div>
             <div className="flex w-full md:w-[37vw] flex-col gap-4 justify-start items-start">
-                <Keyword>Step {stepNo}</Keyword>
+                <span className="font-bold">
+                    <Keyword>Step {stepNo}</Keyword>
+                </span>
                 <h3 className="text-2xl font-bold">{stepTitle}</h3>
                 <p className="text-slate-700 ">{stepDesc}</p>
                 {steps &&
@@ -56,7 +58,14 @@ export default function StepBox({
                         <TickBox content={step} key={index} />
                     ))}
 
-                <Button>Start Free Trial</Button>
+                <Button
+                    onClick={() => {
+                        window.location =
+                            "https://8okzn8zrvfp.typeform.com/to/CGtW7ylQ";
+                    }}
+                >
+                    Start Free Trial
+                </Button>
             </div>
         </div>
     );

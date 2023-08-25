@@ -22,7 +22,7 @@ export default function SupportSection() {
     }, []);
 
     return (
-        <>
+        <div className="mb-24">
             <SectionHeader
                 title={heading}
                 paragraph={description}
@@ -31,7 +31,7 @@ export default function SupportSection() {
             <div className="mt-24 flex gap-8 flex-wrap justify-center">
                 {data && data.map((e, index) => <Box key={index} data={e} />)}
             </div>
-        </>
+        </div>
     );
 }
 

@@ -2,32 +2,40 @@ import { useEffect, useState } from "react";
 import HandleText from "../HandleText";
 import SectionHeader from "../SectionHeader";
 import PriceBox from "./PriceBox";
-import { getPricingSection } from "../../api/PricingAPI";
+import { getPricingSection, getPricingSectionText } from "../../api/PricingAPI";
 
 export default function PricingSection() {
     let [data, setData] = useState(null);
+    let [keyword, setKeyword] = useState("");
+    let [paragraph, setParagraph] = useState("");
+    let [heading, setHeading] = useState("");
+
     useEffect(() => {
         let func = async () => {
             let res = await getPricingSection();
+            let res1 = await getPricingSectionText();
+            let { heading, paragraph, keyword } = res1.data.attributes;
+            setHeading(heading);
+            setParagraph(paragraph);
+            setKeyword(keyword);
             setData(res.data);
         };
         func();
     }, []);
+
     return (
         <div className="mt-16">
             <div className="w-full m-auto lg:w-[50vw]">
                 <SectionHeader
                     shouldNotTakeTopMargin
-                    keyword={"Pricing"}
+                    keyword={keyword}
                     title={HandleText({
-                        text: "We know, the //only thing// that matters is results.",
+                        text: heading,
                     })}
-                    paragraph={`Therefore 1.5k+ companies are using Locom to supercharge their automated referral game.
-                
-                The question is, when will you?`}
+                    paragraph={paragraph}
                 />
             </div>
-            <div className="flex flex-wrap lg:flex-nowrap gap-16 justify-center md:justify-normal items-center md:items-start md:px-8 mt-24">
+            <div className="flex flex-wrap lg:flex-nowrap gap-16 justify-center   md:px-8 mt-24">
                 {data &&
                     data.map((e, index) => (
                         <PriceBox key={index} data={e.attributes} />

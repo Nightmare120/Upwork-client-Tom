@@ -5,12 +5,13 @@ import SupportSection from "../components/PricingPage/SupportSection";
 import Banner from "../components/PricingPage/Banner";
 import AllInOne from "../components/PricingPage/AllInOneSection";
 import PricingSection from "../components/PricingPage/PricingSection";
-import ToggleButton from "../components/ToggleButton";
+// import ToggleButton from "../components/ToggleButton";
 import TestimonialSection from "../components/HomePage/TestimonialSection";
 import HandleText from "../components/HandleText";
 import { useEffect, useState } from "react";
 import { getHeroSection } from "../api/PricingAPI";
-import OurTeam from "../components/PricingPage/OurTeam";
+// import OurTeam from "../components/PricingPage/OurTeam";
+import MonthlyAnnualy from "../components/PricingPage/MonthlyAnnualy";
 
 export default function PricingPAGE() {
     let [Heading, setHeading] = useState("");
@@ -38,35 +39,19 @@ export default function PricingPAGE() {
                         paragraph={Paragraph}
                     />
                     <div className="flex gap-4  flex-col md:flex-row md:justify-center md:items-center md:gap-8 mt-8">
-                        <Button>{ButtonText}</Button>
+                        <Button
+                            onClick={() => {
+                                window.location =
+                                    "https://8okzn8zrvfp.typeform.com/to/CGtW7ylQ";
+                            }}
+                        >
+                            {ButtonText}
+                        </Button>
                     </div>
                 </div>
             </div>
 
-            <div className="flex flex-col mb-16 gap-8 md:flex-row p-8 justify-center md:justify-between mt-16 rounded-lg">
-                <OurTeam />
-                <div className="flex m-auto flex-col w-fit h-fit p-8 rounded-md shadow-md gap-8">
-                    <div className="flex gap-4 items-center">
-                        {" "}
-                        <span>Monthly</span>
-                        <ToggleButton />
-                        <span>Annualy</span>
-                    </div>
-                    <div className="flex gap-8">
-                        <span className="text-2xl text-blue-500">208$ / m</span>
-                        <span className="bg-gray-300 text-base px-4 py-1 rounded-2xl">
-                            Save 20% off
-                        </span>
-                    </div>
-                    <div className="w-full lg:w-[60%]">
-                        <Button>Start 14 day free trial</Button>
-                        <p className="text-sm mt-4 leading-7 underline text-slate-700 ">
-                            Try Locom for free for 14 days with no credit card
-                            required
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <MonthlyAnnualy />
             <div className="border-b-2 w-full h-2"></div>
             <PricingSection />
             <TestimonialSection />
@@ -75,7 +60,14 @@ export default function PricingPAGE() {
             <AllInOne />
             <FAQSection />
             <div className="flex flex-col justify-center items-center gap-4 my-16">
-                <Button>Start 7-days free trial</Button>
+                <Button
+                    onClick={() => {
+                        window.location =
+                            "https://8okzn8zrvfp.typeform.com/to/CGtW7ylQ";
+                    }}
+                >
+                    Start 7-days free trial
+                </Button>
                 <p
                     className="text-center 
 underline text-slate-700 "

@@ -10,15 +10,18 @@ import Rectangle from "../../images/Rectangle.svg";
 export default function HeroSection() {
     let [Heading, setHeading] = useState("");
     let [Description, setDescription] = useState("");
+    let [Botton_button_text, setBottomText] = useState("");
     let [Stats, setStats] = useState([]);
 
     useEffect(() => {
         let fun = async () => {
             let data = await getHeroSection();
-            let { Heading, Description, Stats } = data.data.attributes;
+            let { Heading, Description, Stats, Botton_button_text } =
+                data.data.attributes;
             setHeading(Heading);
             setDescription(Description);
             setStats(Stats);
+            setBottomText(Botton_button_text);
         };
         fun();
     }, []);
@@ -31,7 +34,7 @@ export default function HeroSection() {
                     <HandleText text={Heading} />
                 </h1>
                 <p className="text-slate-700 ">{Description}</p>
-                <EmailInput />
+                <EmailInput Botton_button_text={Botton_button_text} />
 
                 <div className="flex mt-4 gap-4">
                     {Stats.map((stat, index) => (

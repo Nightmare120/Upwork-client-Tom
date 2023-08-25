@@ -5,7 +5,7 @@ import StepsSection from "../components/AffilatePage/StepsSection";
 import TestimonialSection from "../components/AffilatePage/TestimonialsSection";
 import Button from "../components/Button";
 import SectionHeader from "../components/SectionHeader";
-import { getHeroSection } from "../api/AffilateAPI";
+import { getHeroSection, getStepTextSection } from "../api/AffilateAPI";
 import HandleText from "../components/HandleText";
 
 export default function AffilatePAGE() {
@@ -26,7 +26,7 @@ export default function AffilatePAGE() {
     return (
         <>
             <div className="mt-20 lg:mt-32">
-                <div className="w-full md:w-[85vw] m-auto lg:w-[70vw]">
+                <div className="w-full md:w-[70vw] m-auto lg:w-[70vw]">
                     <SectionHeader
                         notShowKeyword
                         title={<HandleText text={Heading} />}
@@ -38,17 +38,41 @@ export default function AffilatePAGE() {
                     </div>
                 </div>
             </div>
-            <SectionHeader
-                keyword={"Features"}
-                title={"How it Works?"}
-                paragraph={
-                    "It is a long established fact that a reader will be distracted by the readable content."
-                }
-            />
+            <StepTextSection />
+
             <StepsSection />
             <TestimonialSection />
-            <PartnerWithUsSection />
+            <div className="w-full md:w-[85%] m-auto lg:w-[70vw]">
+                <PartnerWithUsSection />
+            </div>
             <FAQSection />
         </>
+    );
+}
+
+function StepTextSection() {
+    let [heading, setHeading] = useState("");
+    let [paragraph, setParagraph] = useState("");
+    let [keyword, setKeyword] = useState();
+
+    useEffect(() => {
+        let fun = async () => {
+            let Data = await getStepTextSection();
+            let { heading, paragraph, keyword } = Data.data.attributes;
+            setHeading(heading);
+            setParagraph(paragraph);
+            setKeyword(keyword);
+        };
+
+        fun();
+    }, []);
+    return (
+        <div className="w-full md:w-[85%] m-auto lg:w-[70vw]">
+            <SectionHeader
+                keyword={keyword}
+                title={<HandleText text={heading} />}
+                paragraph={paragraph}
+            />
+        </div>
     );
 }

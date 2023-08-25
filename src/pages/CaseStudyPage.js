@@ -32,7 +32,14 @@ export default function CaseStudyPAGE() {
                     paragraph={Paragraph}
                 />
                 <div className="flex gap-4  flex-col md:flex-row md:justify-center md:items-center md:gap-8 mt-8">
-                    <Button>Start free trial</Button>
+                    <Button
+                        onClick={() => {
+                            window.location =
+                                "https://8okzn8zrvfp.typeform.com/to/CGtW7ylQ";
+                        }}
+                    >
+                        Start free trial
+                    </Button>
                     <ButtonSecondary>Be our next success story</ButtonSecondary>
                 </div>
             </div>

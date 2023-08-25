@@ -1,11 +1,26 @@
 import Logo from "../images/Locom_Logo.svg";
 import Button from "./Button";
-import Keyword from "./Keyword";
 import Apple from "../images/Apple.svg";
 import Play from "../images/playstore.svg";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import HandleText from "./HandleText";
+import { getFooter } from "../api/HomePageAPI";
 
 export default function Footer() {
+    let [copyright, setCopyright] = useState("");
+    let [address, setAddress] = useState("");
+
+    useEffect(() => {
+        let fun = async () => {
+            let Data = await getFooter();
+            let { copyright, address } = Data.data.attributes;
+            setCopyright(copyright);
+            setAddress(address);
+        };
+
+        fun();
+    }, []);
     return (
         <div className="bg-[#F9F9F9] relative  -left-[2rem] md:-left-[80px] w-[100vw]   px-4 py-4 md:px-[60px] md:py-9 overflow-x-hidden">
             <div className=" gap-16 flex-wrap hidden">
@@ -40,15 +55,17 @@ export default function Footer() {
                     />
                 </div>
             </div>
-            <div className="flex justify-between gap-4 flex-wrap mt-16 border-t pt-4">
+            <div className="flex justify-between gap-4 flex-wrap  border-t pt-4">
                 <p className="text-slate-700 ">
-                    ©2022 <Keyword>Locom</Keyword>. All right reserved
+                    <HandleText text={copyright} />
                 </p>
                 <p className="text-slate-700 flex gap-2">
                     <Link to="/terms-and-conditions">Terms & Conditions</Link>|
                     <Link to={"/privacy-policy"}>Privacy</Link>
                 </p>
-                <p>1650 W Digital UT Lehi 84043 | 801 438 4425 </p>
+                <p>
+                    <HandleText text={address} />
+                </p>
             </div>
         </div>
     );

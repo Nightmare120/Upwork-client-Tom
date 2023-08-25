@@ -11,14 +11,14 @@ import Terms from "./pages/TermsCondition";
 function App() {
     return (
         <>
-            <div className="App  px-8 py-4 md:px-[80px] md:py-9 overflow-x-hidden">
-                <Navbar />
+            <div className="App  px-8 pt-4 md:px-[80px] md:pt-9 overflow-x-hidden">
                 <Router>
+                    <Navbar />
                     <Routes>
                         <Route exact path="/" element={<HomePAGE />}></Route>
                         <Route
                             exact
-                            path="/price"
+                            path="/pricing"
                             element={<PricingPAGE />}
                         ></Route>
                         <Route
