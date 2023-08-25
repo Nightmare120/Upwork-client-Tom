@@ -45,10 +45,17 @@ export default function StepBox({
                     </div>
                 </div>
                 <div className="flex w-full md:w-[37vw] flex-col gap-4 justify-start items-start">
-                    <span className="font-bold">
+                    <span
+                        style={{
+                            display: stepNo >= 3 ? "none" : "inline-block",
+                        }}
+                        className="font-bold"
+                    >
                         <Keyword>Step {stepNo}</Keyword>
                     </span>
-                    <h3 className="text-2xl font-bold">{stepTitle}</h3>
+                    <h3 className="text-2xl text-[#060C3C] font-bold">
+                        {stepTitle}
+                    </h3>
                     <p className="text-slate-700 ">{stepDesc}</p>
                     {steps &&
                         steps.map((step, index) => (

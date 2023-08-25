@@ -51,7 +51,9 @@ export default function StepBox({
                 <span className="font-bold">
                     <Keyword>Step {stepNo}</Keyword>
                 </span>
-                <h3 className="text-2xl font-bold">{stepTitle}</h3>
+                <h3 className="text-2xl text-[#060C3C] font-bold">
+                    {stepTitle}
+                </h3>
                 <p className="text-slate-700 ">{stepDesc}</p>
                 {steps &&
                     steps.map((step, index) => (
