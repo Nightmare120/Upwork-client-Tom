@@ -9,6 +9,7 @@ export default function MonthlyAnnualy() {
     let [base_value, setbase_value] = useState("");
     let [proffesion_owner_price, setproffesion_owner_price] = useState(0);
     let [standard_owner_price, setstandard_owner_price] = useState(0);
+    let [discount, setDiscount] = useState(0);
     let [stats, setstats] = useState([]);
     let [memebers, setMembers] = useState("0");
     let [Monthly, setMonthly] = useState(true);
@@ -25,7 +26,12 @@ export default function MonthlyAnnualy() {
     }
 
     function calculateAnnualyPrice(type) {
-        return Number(calculateMonthlyPrice(type)) * 12;
+        let total = Number(calculateMonthlyPrice(type)) * 12;
+        return total - getPercentOf(total, discount);
+    }
+
+    function getPercentOf(value, percent) {
+        return value * (percent / 100);
     }
 
     useEffect(() => {
@@ -41,8 +47,13 @@ export default function MonthlyAnnualy() {
             setHeading(heading);
             setbase_value(base_value);
             setstats(stats);
-            setproffesion_owner_price(Number(proffesion_owner_price));
-            setstandard_owner_price(Number(standard_owner_price));
+            setproffesion_owner_price(
+                Number(proffesion_owner_price.split("//")[0])
+            );
+            setstandard_owner_price(
+                Number(standard_owner_price.split("//")[0])
+            );
+            setDiscount(Number(proffesion_owner_price.split("//")[1]));
         };
         fun();
     }, []);
@@ -61,7 +72,7 @@ export default function MonthlyAnnualy() {
                     {" "}
                     <span>Monthly</span>
                     <ToggleButton value={Monthly} setValue={setMonthly} />
-                    <span>Annualy</span>
+                    <span>Annual</span>
                 </div>
                 <div className="flex gap-4">
                     <div className="flex flex-col gap-4">
@@ -73,7 +84,7 @@ export default function MonthlyAnnualy() {
                             $
                             {Monthly
                                 ? calculateMonthlyPrice("Professional")
-                                : calculateAnnualyPrice("Professional")}
+                                : calculateAnnualyPrice("Professional")}{" "}
                             / {Monthly ? "m" : "y"}
                         </span>
                         <span className="text-2xl text-blue-500">
@@ -84,12 +95,12 @@ export default function MonthlyAnnualy() {
                             $
                             {Monthly
                                 ? calculateMonthlyPrice()
-                                : calculateAnnualyPrice()}
+                                : calculateAnnualyPrice()}{" "}
                             / {Monthly ? "m" : "y"}
                         </span>
                     </div>
                     <span className="bg-gray-300 h-fit text-base px-4 py-1 rounded-2xl">
-                        Save 20% off
+                        Save {discount}% off
                     </span>
                 </div>
                 <div className="w-full lg:w-[60%]">
@@ -99,7 +110,7 @@ export default function MonthlyAnnualy() {
                                 "https://8okzn8zrvfp.typeform.com/to/CGtW7ylQ";
                         }}
                     >
-                        Start 14 day free trial
+                        Start 7-day free trial
                     </Button>
                     <p className="text-sm mt-4 leading-7 underline text-slate-700 ">
                         Try Locom for free for 14 days with no credit card

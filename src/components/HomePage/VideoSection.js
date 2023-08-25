@@ -24,7 +24,7 @@ export default function VideoSection() {
 
     return (
         <div className="my-36">
-            <div className="relative ">
+            <div className="relative hidden">
                 {video && <video src={STRAPI_URL + video.attributes.url} />}
                 <img
                     src={Video_Image}

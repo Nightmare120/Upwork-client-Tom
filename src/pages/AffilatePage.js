@@ -32,6 +32,7 @@ export default function AffilatePAGE() {
                         title={<HandleText text={Heading} />}
                         shouldNotTakeTopMargin
                         paragraph={Paragraph}
+                        shouldParaHasShortWidth={true}
                     />
                     <div className="flex gap-4  flex-col md:flex-row md:justify-center md:items-center md:gap-8 mt-8">
                         <Button>{buttonText}</Button>
@@ -67,7 +68,7 @@ function StepTextSection() {
         fun();
     }, []);
     return (
-        <div className="w-full md:w-[85%] m-auto lg:w-[70vw]">
+        <div className="w-full md:w-[85%] m-auto lg:w-[50vw]">
             <SectionHeader
                 keyword={keyword}
                 title={<HandleText text={heading} />}

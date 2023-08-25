@@ -20,7 +20,11 @@ export default function StepBox({
                     reverse ? "flex-row-reverse" : "flex-row"
                 } gap-8 mt-36 mb-36 justify-between flex-wrap lg:flex-nowrap`}
             >
-                <div className="w-full relative md:w-[37vw]">
+                <div
+                    className={`w-full relative ${
+                        stepNo < 3 ? "md:w-[25vw] m-auto" : "md:w-[37vw]"
+                    }`}
+                >
                     <img src={image} alt="" />
                     <div
                         style={{

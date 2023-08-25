@@ -34,7 +34,7 @@ export default function Navbar() {
                 <Links to={"/pricing"}>Pricing</Links>
                 <Links to={"/partners"}>Partner Program</Links>
 
-                <div className="flex gap-2">
+                <div className="hidden gap-2">
                     <ButtonSecondary
                         onClick={() => {
                             let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,

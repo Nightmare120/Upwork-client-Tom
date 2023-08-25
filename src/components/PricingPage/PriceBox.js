@@ -16,11 +16,13 @@ export default function PriceBox({ data }) {
         >
             <h3 className="text-2xl font-bold flex justify-between">
                 {data.type}
-                {data.type === "Professional" && (
-                    <div className="w-fit rounded-lg py-2 text-white text-base px-8 bg-blue-500">
-                        Most Popular
-                    </div>
-                )}
+                <div
+                    className={`w-fit rounded-lg py-2 ${
+                        data.type === "Professional" ? "visible" : "invisible"
+                    } text-white text-base px-8 bg-blue-500`}
+                >
+                    Most Popular
+                </div>
             </h3>
             <p className="text-slate-700">{data.work}</p>
             <p>{data.description}</p>
@@ -52,7 +54,7 @@ export default function PriceBox({ data }) {
                         "https://8okzn8zrvfp.typeform.com/to/CGtW7ylQ";
                 }}
             >
-                Start 7-days free trial
+                Start 7-day free trial
             </Button>
         </div>
     );

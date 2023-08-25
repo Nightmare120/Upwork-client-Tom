@@ -3,6 +3,7 @@ export default function SectionHeader({
     title,
     paragraph,
     shouldNotTakeTopMargin,
+    shouldParaHasShortWidth,
     notShowKeyword,
 }) {
     return (
@@ -22,7 +23,11 @@ export default function SectionHeader({
             <h1 className="text-4xl font-bold w-[70%] text-[#1C2752] leading-[1.7em] text-center">
                 {title}
             </h1>
-            <p className="text-slate-700 w-[70%] leading-[1.7em] text-center">
+            <p
+                className={`text-slate-700 ${
+                    shouldParaHasShortWidth ? "w-[60%]" : "w-[70%]"
+                }  leading-[1.7em] text-center`}
+            >
                 {paragraph}
             </p>
         </div>

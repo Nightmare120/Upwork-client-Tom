@@ -65,7 +65,7 @@ function ProblemSection() {
             />
             <img
                 src={pattern}
-                className="absolute -mt-30 lg:block hidden sm:block sm:right-5 lg:right-36"
+                className="absolute  lg:block hidden sm:block sm:right-5 lg:right-60"
                 alt=""
             />
         </div>
@@ -117,7 +117,7 @@ function StepTextSection() {
         fun();
     }, []);
     return (
-        <div className="w-full md:w-[85%] m-auto lg:w-[70vw]">
+        <div className="w-full md:w-[85%] m-auto lg:w-[50vw]">
             <SectionHeader
                 keyword={keyword}
                 title={<HandleText text={heading} />}

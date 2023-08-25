@@ -66,7 +66,7 @@ export default function PricingPAGE() {
                             "https://8okzn8zrvfp.typeform.com/to/CGtW7ylQ";
                     }}
                 >
-                    Start 7-days free trial
+                    Start 7-day free trial
                 </Button>
                 <p
                     className="text-center 
