@@ -38,7 +38,7 @@ function App() {
                         ></Route>
                         <Route
                             exact
-                            path="/affilate"
+                            path="/partners"
                             element={<AffilatePAGE />}
                         ></Route>
                     </Routes>

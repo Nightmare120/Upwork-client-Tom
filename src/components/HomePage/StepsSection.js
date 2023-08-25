@@ -1,10 +1,10 @@
 import StepBox from "./StepBox";
-import Step1 from "../../images/Locom Image 6.webp";
-import Step2 from "../../images/Locom Image 3.webp";
-import Step3 from "../../images/Locom Image 5.webp";
-import Step4 from "../../images/Locom Image 2.webp";
-import Step5 from "../../images/Locom Image 4.webp";
-import Step6 from "../../images/Locom Image 7.webp";
+import Step1 from "../../images/Locom Website Images/Locom Website Images/Locom - Website 9.webp";
+import Step2 from "../../images/Locom Website Images/Locom Website Images/Locom - Website 4.webp";
+import Step3 from "../../images/Locom Website Images/Locom Website Images/Locom - Website 7.webp";
+import Step4 from "../../images/Locom Website Images/Locom Website Images/Locom - Website 12.webp";
+import Step5 from "../../images/Locom Website Images/Locom Website Images/Locom - Website 5.webp";
+import Step6 from "../../images/Locom Website Images/Locom Website Images/Locom - Website 6.webp";
 
 import { useEffect, useState } from "react";
 import { getSteps } from "../../api/HomePageAPI";
