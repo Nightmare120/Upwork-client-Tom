@@ -49,6 +49,13 @@ export async function getFAQs() {
     let res = await axios.get(`${STRAPI_URL}/api/faqs?populate=*`, HEADERS);
     return res.data;
 }
+export async function getAffilateFAQs() {
+    let res = await axios.get(
+        `${STRAPI_URL}/api/affilate-faqs?populate=*`,
+        HEADERS
+    );
+    return res.data;
+}
 
 export async function getTestimonials() {
     let res = await axios.get(

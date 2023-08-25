@@ -46,7 +46,7 @@ export default function AffilatePAGE() {
             <div className="w-full md:w-[85%] m-auto lg:w-[70vw]">
                 <PartnerWithUsSection />
             </div>
-            <FAQSection />
+            <FAQSection affilate={true} />
         </>
     );
 }

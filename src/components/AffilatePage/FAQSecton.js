@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import SectionHeader from "../SectionHeader";
 import FAQBox from "./FAQBox";
-import { getFAQSection, getFAQs } from "../../api/AffilateAPI";
+import { getAffilateFAQs, getFAQSection, getFAQs } from "../../api/AffilateAPI";
 import HandleText from "../HandleText";
 
-export default function FAQSection() {
+export default function FAQSection({ affilate }) {
     let [Heading, setHeading] = useState("");
     let [keyword, setKeyword] = useState("");
     let [Paragraph, setParagraph] = useState("");
@@ -29,16 +29,21 @@ export default function FAQSection() {
             />
 
             <div className="flex gap-4 gap-y-8 flex-wrap justify-center py-16">
-                <AllFaq />
+                <AllFaq affilate={affilate} />
             </div>
         </>
     );
 }
 
-function AllFaq() {
+function AllFaq({ affilate }) {
     let [faqs, setFaqs] = useState(null);
     async function a() {
-        let g = await getFAQs();
+        let g = null;
+        if (affilate) {
+            g = await getAffilateFAQs();
+        } else {
+            g = await getFAQs();
+        }
         setFaqs(g.data);
     }
     useEffect(() => {

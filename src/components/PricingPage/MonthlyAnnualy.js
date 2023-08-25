@@ -113,7 +113,7 @@ export default function MonthlyAnnualy() {
                         Start 7-day free trial
                     </Button>
                     <p className="text-sm mt-4 leading-7 underline text-slate-700 ">
-                        Try Locom for free for 14 days with no credit card
+                        Try Locom for free for 7 days with no credit card
                         required
                     </p>
                 </div>

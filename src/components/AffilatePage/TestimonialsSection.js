@@ -81,7 +81,7 @@ export default function TestimonialSection() {
 function NavigatorLeft() {
     return (
         <div>
-            <img src={ArrowLeft} alt="" />;
+            <img src={ArrowLeft} alt="" />
         </div>
     );
 }
