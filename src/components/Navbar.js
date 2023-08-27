@@ -10,7 +10,7 @@ export default function Navbar() {
     let [open, setOpen] = useState(window.screen.width > 768);
 
     return (
-        <div className="flex justify-between items-center">
+        <div className="flex  justify-between items-center">
             <Link to={"/"}>
                 <img src={Logo} alt="" />
             </Link>
@@ -22,17 +22,19 @@ export default function Navbar() {
             <div
                 className={` bg-white gap-4 top-0 left-0 ${
                     open
-                        ? "visible w-[100%] h-[100vh] box-border p-0"
-                        : "invisible w-0 h-0"
-                } absolute flex lg:visible  flex-col transition-all justify-center lg:justify-normal  lg:flex-row lg:static lg:w-max lg:h-max md:gap-14 items-center`}
+                        ? "visible w-full h-[100vh] bg-black bg-opacity-30  box-border p-0"
+                        : "invisible w-full h-0"
+                } absolute  lg:visible  flex-col transition-all justify-center lg:justify-normal  lg:flex-row lg:static lg:w-max lg:h-max md:gap-14 items-center`}
             >
                 <span className="absolute top-5 right-5 lg:hidden">
                     <Button onClick={() => setOpen(false)}>
                         <UilMultiply />
                     </Button>
                 </span>
-                <Links to={"/pricing"}>Pricing</Links>
-                <Links to={"/partners"}>Partner Program</Links>
+                <div className="flex h-[40vh] bg-white lg:visible  flex-col  justify-center lg:justify-normal  lg:flex-row lg:static lg:w-max lg:h-max md:gap-5 lg:gap-14 items-center">
+                    <Links to={"/pricing"}>Pricing</Links>
+                    <Links to={"/partners"}>Partner Program</Links>
+                </div>
 
                 <div className="hidden gap-2">
                     <ButtonSecondary
