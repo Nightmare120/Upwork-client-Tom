@@ -59,7 +59,7 @@ export default function MonthlyAnnualy() {
     }, []);
 
     return (
-        <div className="flex flex-col mb-16 gap-8 md:flex-row p-8 justify-center md:justify-between mt-10 rounded-lg">
+        <div className="flex flex-col mb-16 gap-8 md:flex-row md:p-8 justify-center md:justify-between mt-10 rounded-lg">
             <OurTeam
                 memebers={memebers}
                 setMembers={setMembers}
@@ -67,7 +67,7 @@ export default function MonthlyAnnualy() {
                 heading={Heading}
                 base_value={base_value}
             />
-            <div className="flex m-auto flex-col w-fit h-fit p-8 rounded-md shadow-md gap-8">
+            <div className="flex m-auto flex-col w-full md:w-fit h-fit p-8 rounded-md shadow-md gap-8">
                 <div className="flex gap-4 items-center">
                     {" "}
                     <span>Monthly</span>

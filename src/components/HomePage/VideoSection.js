@@ -37,7 +37,7 @@ export default function VideoSection() {
             </div>
 
             <div className="mt-24 ">
-                <h1 className="text-5xl font-bold mb-16 text-[#1C2752] leading-[1.7em] text-center">
+                <h1 className="text-4xl md:text-5xl font-bold mb-16 text-[#1C2752]  leading-[1.3em] md:leading-[1.7em] text-center">
                     {" "}
                     <HandleText text={heading} />{" "}
                 </h1>
@@ -47,6 +47,7 @@ export default function VideoSection() {
                             <img
                                 src={STRAPI_URL + logo.attributes.url}
                                 key={index}
+                                className="w-[40%] md:w-[27%] lg:w-fit"
                                 alt=""
                             />
                         ))}

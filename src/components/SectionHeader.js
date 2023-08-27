@@ -20,12 +20,12 @@ export default function SectionHeader({
             >
                 {keyword}
             </div>
-            <h1 className="text-4xl font-bold w-[70%] text-[#1C2752] leading-[1.7em] text-center">
+            <h1 className="text-3xl leading-[1.3em] lg:text-4xl font-bold w-full lg:w-[70%] text-[#1C2752] lg:leading-[1.7em] text-center">
                 {title}
             </h1>
             <p
-                className={`text-slate-700 ${
-                    shouldParaHasShortWidth ? "w-[60%]" : "w-[70%]"
+                className={`text-slate-700 w-full ${
+                    shouldParaHasShortWidth ? "lg:w-[60%]" : "lg:w-[70%]"
                 }  leading-[1.7em] text-center`}
             >
                 {paragraph}
