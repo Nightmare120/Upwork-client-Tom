@@ -23,7 +23,14 @@ export default function Banner() {
                 className="flex flex-col md:flex-row p-8 py-16 gap-8 justify-center items-center w-full"
             >
                 <h1 className="text-3xl md:w-1/2">{heading}</h1>
-                <ButtonWhite>{buttonText}</ButtonWhite>
+                <ButtonWhite
+                    onClick={() => {
+                        window.location =
+                            "https://8okzn8zrvfp.typeform.com/to/CGtW7ylQ";
+                    }}
+                >
+                    {buttonText}
+                </ButtonWhite>
             </div>
         </div>
     );

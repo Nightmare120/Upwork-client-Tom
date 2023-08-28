@@ -36,7 +36,7 @@ export default function ReferralsSection() {
             />
             <div className="w-full mt-12 lg:w-1/2 m-auto text-center flex justify-centerr flex-col gap-8 ">
                 <p className="text-3xl font-bold text-blue-500">
-                    {value} Refferals
+                    {value} Referrals
                 </p>
                 <Range
                     min={"1"}
