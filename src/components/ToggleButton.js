@@ -1,9 +1,9 @@
-import "./ToggleButton.css";
+// import "./ToggleButton.css";
 
 export default function ToggleButton({ value, setValue }) {
     return (
         <span>
-            <label class="switch">
+            <label className="switch">
                 <input
                     value={!value}
                     onChange={(e) => {

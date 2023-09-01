@@ -2,7 +2,7 @@ import StatsBox from "../HomePage/StatsBox";
 import BottomRight from "../../images/ArrowTopRight.svg";
 import person from "../../images/peoples.png";
 import Range from "../RangeInput";
-import { useState } from "react";
+import Image from "next/image";
 
 export default function OurTeam({
     stats,
@@ -24,7 +24,7 @@ export default function OurTeam({
                 max={"1000"}
                 value={memebers}
             />
-            <img src={person} className="my-8 w-1/3" alt="" />
+            <Image src={person} className="my-8 w-1/3" alt="" />
             <div className="flex mt-4 gap-4">
                 {stats.map((stat, index) => (
                     <StatsBox
@@ -38,7 +38,7 @@ export default function OurTeam({
                 <p className={`italic text-lg text-slate-700`}>
                     {"Configure your products"}
                 </p>
-                <img
+                <Image
                     src={BottomRight}
                     style={{ transform: "scaleY(-1)" }}
                     className={"ml-auto mt-6"}

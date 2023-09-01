@@ -2,6 +2,7 @@
 import ArrowBottomRight from "../../images/Arrow_bottom_right.svg";
 import ArrowBottomLeft from "../../images/Arrow_bottom_left.svg";
 import { STRAPI_URL } from "../../api/Constant";
+import Image from "next/image";
 
 export default function VideoBox({ number, data }) {
     function isReverse() {
@@ -27,7 +28,7 @@ export default function VideoBox({ number, data }) {
             <div className="flex flex-col gap-4 w-[90vw] lg:w-[35vw] mt-16">
                 <h3 className="text-black text-2xl font-bold">{data.title}</h3>
                 <p className="text-slate-700 ">{data.description}</p>
-                <img
+                <Image
                     src={STRAPI_URL + data.thumbnail.data.attributes.url}
                     className=" w-[90vw] h-[50vh] lg:w-[35vw] lg:h-[35vh]"
                     style={{
@@ -42,7 +43,7 @@ export default function VideoBox({ number, data }) {
                     ></video>
                 )}
             </div>
-            <img
+            <Image
                 className={`hidden mt-16 mx-16 ${
                     haveToShowBottomArrow() ? "lg:block" : "lg:hidden"
                 }`}

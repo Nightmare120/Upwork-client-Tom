@@ -4,9 +4,10 @@ import Keyword from "../Keyword";
 import { getTestimonialSection } from "../../api/HomePageAPI";
 import { useEffect, useState } from "react";
 import { STRAPI_URL } from "../../api/Constant";
+import Image from "next/image";
 
-export default function TestimonialSection() {
-    let [testimonials, setTestimonials] = useState(null);
+export default function TestimonialSection(props) {
+    let [testimonials, setTestimonials] = useState(props.data);
     async function a() {
         let g = await getTestimonialSection();
         setTestimonials(g.data);
@@ -52,7 +53,7 @@ function TestimonialBox({ data }) {
                 </div>
             </div>
             <div>
-                <img src={Quote} className="m-auto" alt="" />
+                <Image src={Quote} className="m-auto" alt="" />
             </div>
             <p className="leading-8 text-xl text-center pb-3 border-b">
                 {data.Quote}

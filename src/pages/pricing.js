@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Button from "../components/Button";
 import SectionHeader from "../components/SectionHeader";
 import FAQSection from "../components/AffilatePage/FAQSecton";
@@ -5,13 +6,11 @@ import SupportSection from "../components/PricingPage/SupportSection";
 import Banner from "../components/PricingPage/Banner";
 import AllInOne from "../components/PricingPage/AllInOneSection";
 import PricingSection from "../components/PricingPage/PricingSection";
-// import ToggleButton from "../components/ToggleButton";
 import TestimonialSection from "../components/HomePage/TestimonialSection";
 import HandleText from "../components/HandleText";
-import { useEffect, useState } from "react";
 import { getHeroSection } from "../api/PricingAPI";
-// import OurTeam from "../components/PricingPage/OurTeam";
 import MonthlyAnnualy from "../components/PricingPage/MonthlyAnnualy";
+import Head from "next/head";
 
 export default function PricingPAGE() {
     let [Heading, setHeading] = useState("");
@@ -30,6 +29,9 @@ export default function PricingPAGE() {
     }, []);
     return (
         <>
+            <Head key={"pricing"}>
+                <title>Pricing</title>
+            </Head>
             <div className="mt-20 lg:mt-32">
                 <div className="w-full md:w-[85vw] m-auto lg:w-[50vw]">
                     <SectionHeader

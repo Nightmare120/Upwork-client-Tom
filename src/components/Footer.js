@@ -2,10 +2,11 @@ import Logo from "../images/Locom_Logo.svg";
 import Button from "./Button";
 import Apple from "../images/Apple.svg";
 import Play from "../images/playstore.svg";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import HandleText from "./HandleText";
 import { getFooter } from "../api/HomePageAPI";
+import Image from "next/image";
 
 export default function Footer() {
     let [copyright, setCopyright] = useState("");
@@ -25,10 +26,10 @@ export default function Footer() {
         <div className="bg-[#F9F9F9] relative  -left-[2rem] md:-left-[80px] w-[100vw]   px-4 py-4 md:px-[60px] md:py-9 overflow-x-hidden">
             <div className=" gap-16 flex-wrap hidden">
                 <div className="flex flex-col gap-8">
-                    <img src={Logo} alt="" />
+                    <Image src={Logo} alt="" />
                     <Button>
                         <div className="flex gap-2 items-center">
-                            <img src={Apple} alt="" />
+                            <Image src={Apple} alt="" />
                             <div className="text-left">
                                 Download on the <br /> Apple Store
                             </div>
@@ -36,7 +37,7 @@ export default function Footer() {
                     </Button>
                     <Button>
                         <div className="flex gap-2 items-center">
-                            <img src={Play} alt="" />
+                            <Image src={Play} alt="" />
                             <div className="text-left">
                                 Get it on <br /> Google Play
                             </div>
@@ -60,8 +61,8 @@ export default function Footer() {
                     <HandleText text={copyright} />
                 </p>
                 <p className="text-slate-700 flex gap-2">
-                    <Link to="/terms-and-conditions">Terms & Conditions</Link>|
-                    <Link to={"/privacy-policy"}>Privacy</Link>
+                    <Link href="/terms-and-conditions">Terms & Conditions</Link>
+                    |<Link href={"/privacy-policy"}>Privacy</Link>
                 </p>
                 <p>
                     <HandleText text={address} />

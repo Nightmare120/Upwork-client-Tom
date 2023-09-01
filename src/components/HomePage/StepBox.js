@@ -4,6 +4,7 @@ import check from "../../images/check.svg";
 // import Step3Detail from "../../images/Step3_detail.svg";
 import ArrowTopLeft from "../../images/ArrowTopLeft.svg";
 import ArrowTopRight from "../../images/ArrowTopRight.svg";
+import Image from "next/image";
 
 export default function StepBox({
     image,
@@ -20,7 +21,7 @@ export default function StepBox({
             } gap-8  justify-between flex-wrap lg:flex-nowrap`}
         >
             <div className="w-full relative md:w-[37vw]">
-                <img src={image} alt="" />
+                <Image src={image} alt="" />
                 {/* {Number(stepNo) === 3 && (
                     <img
                         className="absolute -right-5 top-8 md:-right-16 md:top-16"
@@ -33,7 +34,7 @@ export default function StepBox({
                         stepNo === 5 ? "mt-0" : "mt-12"
                     } w-fit `}
                 >
-                    <img
+                    <Image
                         src={reverse ? ArrowTopRight : ArrowTopLeft}
                         className={`${reverse ? "ml-auto" : "mr-auto"}`}
                         alt=""
@@ -76,7 +77,7 @@ export default function StepBox({
 export function TickBox({ content }) {
     return (
         <div className="flex items-start gap-2 pt-2">
-            <img src={check} className="mt-1" alt="" /> {content}
+            <Image src={check} className="mt-1" alt="" /> {content}
         </div>
     );
 }

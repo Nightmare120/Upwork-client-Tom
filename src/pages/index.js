@@ -1,48 +1,58 @@
 import { useEffect, useState } from "react";
 import ExperienceBox from "../components/HomePage/ExperienceBox";
 import HeroSection from "../components/HomePage/HeroSection";
-// import StepBox from "../components/HomePage/StepBox";
 import TestimonialSection from "../components/HomePage/TestimonialSection";
 import TrialSection from "../components/HomePage/TrialSection";
 import VideoSection from "../components/HomePage/VideoSection";
 import WhatYouNeedSection from "../components/HomePage/WhatYouNeedSection";
-// import Keyword from "../components/Keyword";
+import Image from "next/image";
 import SectionHeader from "../components/SectionHeader";
-// import Step1 from "../images/Step1.png";
-// import Step2 from "../images/Step2.png";
-// import Step3 from "../images/Step3.png";
-// import Step4 from "../images/Step4.png";
-// import Step5 from "../images/Step5.png";
-// import Step6 from "../images/Step6.png";
+
 import {
+    getAdvantageSection,
+    getHeroSection,
+    getHomePageTrialSection,
     getProblemSection,
     getSolutionSection,
     getStepTextSection,
+    getSteps,
+    getTestimonialSection,
+    getVideoSection,
 } from "../api/HomePageAPI";
 import StepsSection from "../components/HomePage/StepsSection";
 import HandleText from "../components/HandleText";
 import pattern from "../images/Pattern.svg";
 
-export default function HomePAGE() {
+export default function HomePAGE({
+    heroSection,
+    videoSection,
+    problemSection,
+    solutionSection,
+    stepTextSection,
+    stepsSection,
+    whatYouNeedSection,
+    testimonialSection,
+    trialSection,
+}) {
     return (
         <>
-            <HeroSection />
-            <VideoSection />
-            <ProblemSection />
-            <SolutionSection />
-            <StepTextSection />
-            <StepsSection />
-            <WhatYouNeedSection />
-            <TestimonialSection />
-            <TrialSection />
+            <HeroSection {...heroSection} />
+            <VideoSection {...videoSection} />
+            <ProblemSection {...problemSection} />
+            <SolutionSection {...solutionSection} />
+            <StepTextSection {...stepTextSection} />
+            <StepsSection {...stepsSection} />
+            <WhatYouNeedSection {...whatYouNeedSection} />
+            <TestimonialSection {...testimonialSection} />
+            <TrialSection {...trialSection} />
         </>
     );
 }
 
-function ProblemSection() {
-    let [Heading, setHeading] = useState("");
-    let [keyword, setkeyword] = useState("");
-    let [Description, setDescription] = useState("");
+function ProblemSection(props) {
+    let [Heading, setHeading] = useState(props.Heading);
+    let [keyword, setkeyword] = useState(props.keyword);
+    let [Description, setDescription] = useState(props.Description);
 
     useEffect(() => {
         let fun = async () => {
@@ -63,7 +73,7 @@ function ProblemSection() {
                 title={<HandleText text={Heading} />}
                 paragraph={Description}
             />
-            <img
+            <Image
                 src={pattern}
                 className="absolute  lg:block hidden sm:block sm:right-5 lg:right-60"
                 alt=""
@@ -72,10 +82,10 @@ function ProblemSection() {
     );
 }
 
-function SolutionSection() {
-    let [Heading, setHeading] = useState("");
-    let [Description, setDescription] = useState("");
-    let [Data, setData] = useState({});
+function SolutionSection(props) {
+    let [Heading, setHeading] = useState(props.heading);
+    let [Description, setDescription] = useState(props.description);
+    let [Data, setData] = useState(props.data);
 
     useEffect(() => {
         let fun = async () => {
@@ -95,15 +105,15 @@ function SolutionSection() {
                 title={<HandleText text={Heading} />}
                 paragraph={Description}
             />
-            <ExperienceBox data={Data} />
+            <ExperienceBox data={Data ? Data : {}} />
         </div>
     );
 }
 
-function StepTextSection() {
-    let [heading, setHeading] = useState("");
-    let [paragraph, setParagraph] = useState("");
-    let [keyword, setKeyword] = useState();
+function StepTextSection(props) {
+    let [heading, setHeading] = useState(props.heading);
+    let [paragraph, setParagraph] = useState(props.paragraph);
+    let [keyword, setKeyword] = useState(props.keyword);
 
     useEffect(() => {
         let fun = async () => {
@@ -125,4 +135,35 @@ function StepTextSection() {
             />
         </div>
     );
+}
+
+export async function getStaticProps() {
+    let data = await getHeroSection();
+    let data1 = await getVideoSection();
+    let data2 = await getProblemSection();
+    let data3 = await getSolutionSection();
+    let data4 = await getStepTextSection();
+    let data5 = await getSteps();
+    let data6 = await getAdvantageSection();
+    let data7 = await getTestimonialSection();
+    let data8 = await getHomePageTrialSection();
+
+    console.log("content fetch");
+    // let { Heading, Description, Stats, Botton_button_text } =
+    //     ;
+    return {
+        props: {
+            heroSection: {
+                ...data.data.attributes,
+            },
+            videoSection: { ...data1.data.attributes },
+            problemSection: { ...data2.data.attributes },
+            solutionSection: { ...data3.data.attributes },
+            stepTextSection: { ...data4.data.attributes },
+            stepsSection: data5,
+            whatYouNeedSection: { ...data6.data.attributes },
+            testimonialSection: data7,
+            trialSection: { ...data8.data.attributes },
+        },
+    };
 }

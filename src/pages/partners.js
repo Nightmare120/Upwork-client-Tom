@@ -5,13 +5,33 @@ import StepsSection from "../components/AffilatePage/StepsSection";
 import TestimonialSection from "../components/AffilatePage/TestimonialsSection";
 import Button from "../components/Button";
 import SectionHeader from "../components/SectionHeader";
-import { getHeroSection, getStepTextSection } from "../api/AffilateAPI";
+import {
+    getBEcomeAffilateSection,
+    getFAQSection,
+    getHeroSection,
+    getStepTextSection,
+    getStepsSection,
+    getTestimonials,
+} from "../api/AffilateAPI";
 import HandleText from "../components/HandleText";
 
-export default function AffilatePAGE() {
-    let [Heading, setHeading] = useState("");
-    let [buttonText, setButtonText] = useState("");
-    let [Paragraph, setParagraph] = useState("");
+export default function AffilatePAGE({
+    heroSection,
+    stepTextSection,
+    stepsSection,
+    testimonialSection,
+    partnerWithUsSection,
+    fAQSection,
+}) {
+    let [Heading, setHeading] = useState(
+        heroSection ? heroSection.heading : ""
+    );
+    let [buttonText, setButtonText] = useState(
+        heroSection ? heroSection.buttonText : ""
+    );
+    let [Paragraph, setParagraph] = useState(
+        heroSection ? heroSection.description : ""
+    );
 
     useEffect(() => {
         let fun = async () => {
@@ -39,22 +59,22 @@ export default function AffilatePAGE() {
                     </div>
                 </div>
             </div>
-            <StepTextSection />
+            <StepTextSection {...stepTextSection} />
 
-            <StepsSection />
-            <TestimonialSection />
+            <StepsSection {...stepsSection} />
+            <TestimonialSection {...testimonialSection} />
             <div className="w-full md:w-[85%] m-auto lg:w-[70vw]">
-                <PartnerWithUsSection />
+                <PartnerWithUsSection {...partnerWithUsSection} />
             </div>
-            <FAQSection affilate={true} />
+            <FAQSection {...fAQSection} affilate={true} />
         </>
     );
 }
 
-function StepTextSection() {
-    let [heading, setHeading] = useState("");
-    let [paragraph, setParagraph] = useState("");
-    let [keyword, setKeyword] = useState();
+function StepTextSection(props) {
+    let [heading, setHeading] = useState(props.heading);
+    let [paragraph, setParagraph] = useState(props.paragraph);
+    let [keyword, setKeyword] = useState(props.keyword);
 
     useEffect(() => {
         let fun = async () => {
@@ -76,4 +96,26 @@ function StepTextSection() {
             />
         </div>
     );
+}
+
+export async function getStaticProps() {
+    let data = await getHeroSection();
+    let data1 = await getStepTextSection();
+    let data2 = await getStepsSection();
+    let data3 = await getTestimonials();
+    let data4 = await getBEcomeAffilateSection();
+    let data5 = await getFAQSection();
+
+    return {
+        props: {
+            heroSection: {
+                ...data.data.attributes,
+            },
+            stepTextSection: { ...data1.data.attributes },
+            stepsSection: data2,
+            testimonialSection: data3,
+            partnerWithUsSection: { ...data4.data.attributes },
+            fAQSection: { ...data5.data.attributes },
+        },
+    };
 }

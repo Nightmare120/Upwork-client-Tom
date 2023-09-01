@@ -1,4 +1,4 @@
-import "./Range.css";
+// import "./Range.css";
 
 export default function Range({ min, max, value, setValue }) {
     return (

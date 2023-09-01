@@ -4,6 +4,7 @@ import { ButtonWhite } from "../Button";
 import { getBanner } from "../../api/CaseStudyAPI";
 import { useEffect, useState } from "react";
 import { STRAPI_URL } from "../../api/Constant";
+import Image from "next/image";
 
 export default function Banner() {
     let [heading, setHeading] = useState("");
@@ -36,7 +37,7 @@ export default function Banner() {
                 </div>
                 <div className="w-full lg:w-[60vw]">
                     {stats && (
-                        <img
+                        <Image
                             src={STRAPI_URL + stats.data.attributes.url}
                             alt=""
                         />

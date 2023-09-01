@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { getAdvantageSection } from "../../api/HomePageAPI";
 import HandleText from "../HandleText";
 import pattern from "../../images/Pattern.svg";
+import Image from "next/image";
 
-export default function WhatYouNeedSection() {
-    let [heading, setHeading] = useState("");
-    let [description, setDescription] = useState("");
-    let [data, setData] = useState(null);
+export default function WhatYouNeedSection(props) {
+    let [heading, setHeading] = useState(props.heading);
+    let [description, setDescription] = useState(props.description);
+    let [data, setData] = useState(props.data);
     useEffect(() => {
         let fun = async () => {
             let Data = await getAdvantageSection();
@@ -23,7 +24,7 @@ export default function WhatYouNeedSection() {
             <div className="flex gap-8 justify-center items-center">
                 <div className="flex justify-center items-center pt-40 box-border">
                     {" "}
-                    <img
+                    <Image
                         src={pattern}
                         className="hidden md:block lg:block"
                         style={{ transform: "scaleX(-1)" }}
@@ -40,7 +41,7 @@ export default function WhatYouNeedSection() {
                 </div>
                 <div className="flex justify-center items-center pt-40 box-border">
                     {" "}
-                    <img
+                    <Image
                         src={pattern}
                         className="hidden md:block"
                         alt=""
@@ -61,10 +62,10 @@ function StatBox({ title, para }) {
     return (
         <div className="flex flex-col gap-7 text-center w-full md:w-[29%]">
             <h3 className=" relative font-bold text-4xl text-center text-blue-500">
-                <p className="w-fit m-auto ">
+                <div className="w-fit m-auto ">
                     {title}{" "}
                     <div className="absolute w-[25%]  h-1  mt-2 bg-gradient-to-r to-[#4563FF] from-[#58AFFF]"></div>
-                </p>
+                </div>
             </h3>
             <p className="text-slate-700 text-center">{para}</p>
         </div>

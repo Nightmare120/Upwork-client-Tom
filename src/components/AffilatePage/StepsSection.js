@@ -3,8 +3,8 @@ import { STRAPI_URL } from "../../api/Constant";
 import StepBox from "./StepBox";
 import { getStepsSection } from "../../api/AffilateAPI";
 
-export default function StepsSection() {
-    let [steps, setSteps] = useState([]);
+export default function StepsSection(props) {
+    let [steps, setSteps] = useState(props.data);
     useEffect(() => {
         let fun = async () => {
             let Data = await getStepsSection();

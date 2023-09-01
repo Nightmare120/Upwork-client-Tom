@@ -1,7 +1,8 @@
 import SectionHeader from "../SectionHeader";
-import Quote from "../../images/Quote.svg";
+// import Quote from "../../images/Quote.svg";
 import { useEffect, useState } from "react";
 import { getAllInOneSection } from "../../api/PricingAPI";
+// import { useState } from "react";
 
 export default function AllInOne() {
     let [heading, setHeading] = useState("");

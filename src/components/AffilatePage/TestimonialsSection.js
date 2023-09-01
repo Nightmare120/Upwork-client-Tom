@@ -2,6 +2,7 @@ import Keyword from "../Keyword";
 import SectionHeader from "../SectionHeader";
 import { useRef, useEffect, useState } from "react";
 import { register } from "swiper/element/bundle";
+import Image from "next/image";
 
 import ArrowLeft from "../../images/ArrowLeft.svg";
 import ArrowRight from "../../images/ArrowRight.svg";
@@ -10,10 +11,10 @@ import TestimonyBox from "./TestimonyBox";
 import { getTestimonials } from "../../api/AffilateAPI";
 
 register();
-export default function TestimonialSection() {
+export default function TestimonialSection(props) {
     const swiperElRef = useRef(null);
 
-    let [testimonials, setTestimonials] = useState(null);
+    let [testimonials, setTestimonials] = useState(props.data);
     async function a() {
         let g = await getTestimonials();
         setTestimonials(g.data);
@@ -81,12 +82,12 @@ export default function TestimonialSection() {
 function NavigatorLeft() {
     return (
         <div>
-            <img src={ArrowLeft} alt="" />
+            <Image src={ArrowLeft} alt="" />
         </div>
     );
 }
 function NavigatorRight() {
     // const swiper = useSwiper();
 
-    return <img src={ArrowRight} alt="" />;
+    return <Image src={ArrowRight} alt="" />;
 }

@@ -2,6 +2,7 @@ import check from "../../images/check.svg";
 import Wrong from "../../images/Wrong.svg";
 import Background from "../../images/PriceBoxBackground.svg";
 import Button from "../Button";
+import Image from "next/image";
 
 export default function PriceBox({ data }) {
     return (
@@ -28,7 +29,7 @@ export default function PriceBox({ data }) {
             <p>{data.description}</p>
             <div
                 style={{
-                    backgroundImage: `url('${Background}')`,
+                    backgroundImage: `url('${Background.src}')`,
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
                 }}
@@ -63,7 +64,7 @@ export default function PriceBox({ data }) {
 export function TickBox({ content, wrong }) {
     return (
         <div className="flex items-start gap-2 pt-2">
-            <img src={wrong ? Wrong : check} className="mt-1" alt="" />{" "}
+            <Image src={wrong ? Wrong : check} className="mt-1" alt="" />{" "}
             {content}
         </div>
     );

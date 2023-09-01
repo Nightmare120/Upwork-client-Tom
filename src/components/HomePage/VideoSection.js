@@ -3,11 +3,12 @@ import { getVideoSection } from "../../api/HomePageAPI";
 import Video_Image from "../../images/Video_Image.png";
 import { useEffect, useState } from "react";
 import HandleText from "../HandleText";
+import Image from "next/image";
 
-export default function VideoSection() {
-    let [video, setVideo] = useState(null);
-    let [heading, setHeading] = useState("");
-    let [logos, setLogos] = useState([]);
+export default function VideoSection(props) {
+    let [video, setVideo] = useState(props.video ? props.video.data : null);
+    let [heading, setHeading] = useState(props.heading);
+    let [logos, setLogos] = useState(props.logos);
 
     useEffect(() => {
         let fun = async () => {
@@ -26,7 +27,7 @@ export default function VideoSection() {
         <div className="my-36">
             <div className="relative hidden">
                 {video && <video src={STRAPI_URL + video.attributes.url} />}
-                <img
+                <Image
                     src={Video_Image}
                     style={{ display: video ? "none" : "block" }}
                     className="z-10 relative rounded-lg h-[60vh] md:h-[90vh] w-[100vw]"
@@ -42,7 +43,7 @@ export default function VideoSection() {
                     <HandleText text={heading} />{" "}
                 </h1>
                 <div className="flex justify-between gap-8 flex-wrap">
-                    {logos.data &&
+                    {logos &&
                         logos.data.map((logo, index) => (
                             <img
                                 src={STRAPI_URL + logo.attributes.url}

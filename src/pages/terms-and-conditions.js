@@ -1,5 +1,3 @@
-import "./PrivacyPolicy.css";
-
 export default function Terms() {
     return (
         <div className="mt-16">

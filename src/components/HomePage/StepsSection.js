@@ -11,8 +11,9 @@ import { getSteps } from "../../api/HomePageAPI";
 
 const IMAGES = [Step1, Step2, Step3, Step4, Step5, Step6];
 
-export default function StepsSection() {
-    let [steps, setSteps] = useState([]);
+export default function StepsSection(props) {
+    console.log(props.data);
+    let [steps, setSteps] = useState(props.data);
     useEffect(() => {
         let fun = async () => {
             let Data = await getSteps();

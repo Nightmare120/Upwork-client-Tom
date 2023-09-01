@@ -4,10 +4,10 @@ import SectionHeader from "../SectionHeader";
 import { useEffect, useState } from "react";
 import { getBEcomeAffilateSection } from "../../api/AffilateAPI";
 
-export default function PartnerWithUsSection() {
-    let [Heading, setHeading] = useState("");
-    let [buttonText, setButtonText] = useState("");
-    let [Paragraph, setParagraph] = useState("");
+export default function PartnerWithUsSection(props) {
+    let [Heading, setHeading] = useState(props.heading);
+    let [buttonText, setButtonText] = useState(props.buttonText);
+    let [Paragraph, setParagraph] = useState(props.description);
 
     useEffect(() => {
         let fun = async () => {

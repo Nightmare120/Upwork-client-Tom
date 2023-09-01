@@ -1,6 +1,7 @@
 import SectionHeader from "../SectionHeader";
 import { useEffect, useState } from "react";
 import { getSupportSection } from "../../api/PricingAPI";
+import Image from "next/image";
 
 export default function SupportSection() {
     let [heading, setHeading] = useState("");

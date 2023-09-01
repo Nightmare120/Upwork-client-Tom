@@ -4,6 +4,7 @@ import check from "../../images/check.svg";
 import ArrowTopRight from "../../images/ArrowTopRight.svg";
 import ArrowTopLeft from "../../images/ArrowTopLeft.svg";
 import ReferralsSection from "./Referrals";
+import Image from "next/image";
 
 export default function StepBox({
     image,
@@ -34,7 +35,9 @@ export default function StepBox({
                             reverse ? "mr-auto ml-5" : "ml-auto mr-5"
                         }  mt-12 w-fit `}
                     >
-                        <img
+                        <Image
+                            width={`100%`}
+                            height={"100%"}
                             src={reverse ? ArrowTopRight : ArrowTopLeft}
                             className={`${reverse ? "ml-auto" : "mr-auto"}`}
                             alt=""
@@ -84,7 +87,7 @@ export default function StepBox({
 export function TickBox({ content }) {
     return (
         <div className="flex items-start gap-2 pt-2">
-            <img src={check} className="mt-1" alt="" /> {content}
+            <Image src={check} className="mt-1" alt="" /> {content}
         </div>
     );
 }

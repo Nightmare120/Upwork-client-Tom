@@ -1,5 +1,3 @@
-import "./PrivacyPolicy.css";
-
 export default function PrivacyPolicy() {
     return (
         <div className="mt-16">

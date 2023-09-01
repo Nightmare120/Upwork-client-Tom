@@ -4,14 +4,18 @@ import EmailInput from "./EmailInput";
 import StatsBox from "./StatsBox";
 import { getHeroSection } from "../../api/HomePageAPI";
 import HandleText from "../HandleText";
+import Image from "next/image";
+
 // import Dots from "../../images/dots.svg";
 // import Rectangle from "../../images/Rectangle.svg";
 
-export default function HeroSection() {
-    let [Heading, setHeading] = useState("");
-    let [Description, setDescription] = useState("");
-    let [Botton_button_text, setBottomText] = useState("");
-    let [Stats, setStats] = useState([]);
+export default function HeroSection(props) {
+    let [Heading, setHeading] = useState(props.Heading);
+    let [Description, setDescription] = useState(props.Description);
+    let [Botton_button_text, setBottomText] = useState(
+        props.Botton_button_text
+    );
+    let [Stats, setStats] = useState(props.Stats);
 
     useEffect(() => {
         let fun = async () => {
@@ -37,13 +41,14 @@ export default function HeroSection() {
                 <EmailInput Botton_button_text={Botton_button_text} />
 
                 <div className="flex mt-4 gap-4">
-                    {Stats.map((stat, index) => (
-                        <StatsBox
-                            title={stat.Data}
-                            key={index}
-                            detail={stat.desc}
-                        />
-                    ))}
+                    {Stats &&
+                        Stats.map((stat, index) => (
+                            <StatsBox
+                                title={stat.Data}
+                                key={index}
+                                detail={stat.desc}
+                            />
+                        ))}
                 </div>
             </div>
             <div className=" w-full lg:w-[60vw]">
@@ -52,7 +57,7 @@ export default function HeroSection() {
                     src={Dots}
                     alt=""
                 /> */}
-                <img
+                <Image
                     className="w-full  lg:w-[60vw]"
                     src={BackgroundIMG}
                     alt=""

@@ -5,11 +5,13 @@ import { TickBox } from "./StepBox";
 import HandleText from "../HandleText";
 import { getHomePageTrialSection } from "../../api/HomePageAPI";
 
-export default function TrialSection() {
-    let [heading, setHeading] = useState("");
-    let [paragraph, setParagraph] = useState("");
-    let [data, setData] = useState([]);
-    let [Botton_button_line, setButtonLine] = useState("");
+export default function TrialSection(props) {
+    let [heading, setHeading] = useState(props.heading);
+    let [paragraph, setParagraph] = useState(props.paragraph);
+    let [data, setData] = useState(props.data);
+    let [Botton_button_line, setButtonLine] = useState(
+        props.Botton_button_line
+    );
 
     useEffect(() => {
         let fun = async () => {

@@ -4,10 +4,10 @@ import FAQBox from "./FAQBox";
 import { getAffilateFAQs, getFAQSection, getFAQs } from "../../api/AffilateAPI";
 import HandleText from "../HandleText";
 
-export default function FAQSection({ affilate }) {
-    let [Heading, setHeading] = useState("");
-    let [keyword, setKeyword] = useState("");
-    let [Paragraph, setParagraph] = useState("");
+export default function FAQSection(props) {
+    let [Heading, setHeading] = useState(props.heading);
+    let [keyword, setKeyword] = useState(props.keyword);
+    let [Paragraph, setParagraph] = useState(props.description);
 
     useEffect(() => {
         let fun = async () => {
@@ -29,7 +29,7 @@ export default function FAQSection({ affilate }) {
             />
 
             <div className="flex gap-4 gap-y-8 flex-wrap justify-center py-16">
-                <AllFaq affilate={affilate} />
+                <AllFaq affilate={props.affilate} />
             </div>
         </>
     );
