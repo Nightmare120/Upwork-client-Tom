@@ -32,3 +32,14 @@ export function ButtonWhite({ children, onClick }) {
         </button>
     );
 }
+
+export function LinkButton({ children, onClick }) {
+    return (
+        <button
+            onClick={onClick ? onClick : () => {}}
+            className={`flex gap-3 items-center  text-lg text-[#1C2752]  `}
+        >
+            {children}
+        </button>
+    );
+}
