@@ -5,6 +5,7 @@ import "./PrivacyPolicy.css";
 import "../components/ToggleButton.css";
 import "../index.css";
 import "../App.css";
+import "./blog/blogPage.css";
 
 // import "../globals.css";
 
