@@ -8,7 +8,7 @@ export default function Range({ min, max, value, setValue }) {
                 min={min}
                 max={max}
                 value={value}
-                oninput="rangeValue.innerText = this.value"
+                // oninput="rangeValue.innerText = this.value"
                 onInput={(e) => {
                     setValue(`${e.target.value}`);
                 }}

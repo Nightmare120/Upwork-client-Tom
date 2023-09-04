@@ -26,7 +26,7 @@ export default function VideoSection(props) {
     return (
         <div className="my-36">
             <div className="relative hidden">
-                {video && <video src={STRAPI_URL + video.attributes.url} />}
+                {video && <video src={video.attributes.url} />}
                 <Image
                     src={Video_Image}
                     style={{ display: video ? "none" : "block" }}
@@ -46,7 +46,7 @@ export default function VideoSection(props) {
                     {logos &&
                         logos.data.map((logo, index) => (
                             <img
-                                src={STRAPI_URL + logo.attributes.url}
+                                src={logo.attributes.url}
                                 key={index}
                                 className="w-[40%] md:w-[27%] lg:w-fit"
                                 alt=""

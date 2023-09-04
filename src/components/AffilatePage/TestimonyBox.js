@@ -19,7 +19,7 @@ export default function TestimonyBox({ data }) {
             <Image src={Quote} alt="" />
             <p className="text-slate-700 leading-7 text-center">{data.quote}</p>
             <img
-                src={STRAPI_URL + data.picture.data.attributes.url}
+                src={data.picture.data.attributes.url}
                 className="rounded-full w-16 h-16"
                 alt=""
             />

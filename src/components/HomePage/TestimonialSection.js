@@ -43,7 +43,7 @@ function TestimonialBox({ data }) {
         <div className="border shadow-md p-9 flex flex-col gap-8 rounded-md lg:w-1/3">
             <div className="flex gap-3">
                 <img
-                    src={STRAPI_URL + data.Picture.data.attributes.url}
+                    src={data.Picture.data.attributes.url}
                     className="rounded-full w-14 h-14"
                     alt=""
                 />

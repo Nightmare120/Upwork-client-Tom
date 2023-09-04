@@ -29,7 +29,7 @@ export default function VideoBox({ number, data }) {
                 <h3 className="text-black text-2xl font-bold">{data.title}</h3>
                 <p className="text-slate-700 ">{data.description}</p>
                 <Image
-                    src={STRAPI_URL + data.thumbnail.data.attributes.url}
+                    src={data.thumbnail.data.attributes.url}
                     className=" w-[90vw] h-[50vh] lg:w-[35vw] lg:h-[35vh]"
                     style={{
                         display: data.video.data ? "none" : "block",
@@ -38,7 +38,7 @@ export default function VideoBox({ number, data }) {
                 />
                 {data.video.data && (
                     <video
-                        src={STRAPI_URL + data.video.data.attributes.url}
+                        src={data.video.data.attributes.url}
                         className="w-[90vw] h-[50vh] lg:w-[35vw] lg:h-[35vh]"
                     ></video>
                 )}

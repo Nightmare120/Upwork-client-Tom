@@ -36,12 +36,7 @@ export default function Banner() {
                     <ButtonWhite>{buttonText}</ButtonWhite>
                 </div>
                 <div className="w-full lg:w-[60vw]">
-                    {stats && (
-                        <Image
-                            src={STRAPI_URL + stats.data.attributes.url}
-                            alt=""
-                        />
-                    )}
+                    {stats && <Image src={stats.data.attributes.url} alt="" />}
                 </div>
             </div>
         </div>

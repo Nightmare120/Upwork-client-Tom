@@ -20,10 +20,7 @@ export default function StepsSection(props) {
                 steps.map((step, index) => (
                     <StepBox
                         key={index}
-                        image={
-                            STRAPI_URL +
-                            step.attributes.Picture.data.attributes.url
-                        }
+                        image={step.attributes.Picture.data.attributes.url}
                         stepNo={step.attributes.Number}
                         stepTitle={step.attributes.Name}
                         stepDesc={step.attributes.Description}
