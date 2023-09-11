@@ -4,13 +4,19 @@ import ToggleButton from "../ToggleButton";
 import OurTeam from "./OurTeam";
 import { getPricingSliderSection } from "../../api/PricingAPI";
 
-export default function MonthlyAnnualy() {
-    let [Heading, setHeading] = useState("");
-    let [base_value, setbase_value] = useState("");
-    let [proffesion_owner_price, setproffesion_owner_price] = useState(0);
-    let [standard_owner_price, setstandard_owner_price] = useState(0);
-    let [discount, setDiscount] = useState(0);
-    let [stats, setstats] = useState([]);
+export default function MonthlyAnnualy(props) {
+    let [Heading, setHeading] = useState(props.heading);
+    let [base_value, setbase_value] = useState(props.base_value);
+    let [proffesion_owner_price, setproffesion_owner_price] = useState(
+        Number(props.proffesion_owner_price.split("//")[0])
+    );
+    let [standard_owner_price, setstandard_owner_price] = useState(
+        Number(props.standard_owner_price.split("//")[0])
+    );
+    let [discount, setDiscount] = useState(
+        Number(props.proffesion_owner_price.split("//")[1])
+    );
+    let [stats, setstats] = useState(props.stats);
     let [memebers, setMembers] = useState("0");
     let [Monthly, setMonthly] = useState(true);
 

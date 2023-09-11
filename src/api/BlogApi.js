@@ -10,9 +10,22 @@ export async function getAllBlogs(pageNo) {
     return res.data;
 }
 
+export async function getEveryBlogs() {
+    let res = await axios.get(`${STRAPI_URL}/api/blogs?populate=*`, HEADERS);
+    return res.data;
+}
+
 export async function getBlog(slug) {
     let res = await axios.get(
         `${STRAPI_URL}/api/blogs?filters[slug][$eq]=${slug}&populate=*`,
+        HEADERS
+    );
+    return res.data;
+}
+
+export async function getHeroSection() {
+    let res = await axios.get(
+        `${STRAPI_URL}/api/blog-page?populate=*`,
         HEADERS
     );
     return res.data;

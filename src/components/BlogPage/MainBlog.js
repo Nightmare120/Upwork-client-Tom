@@ -4,7 +4,6 @@ import Keyword from "../Keyword";
 import Link from "next/link";
 
 export default function MainBlog({ content }) {
-    console.log(content, "contnet");
     content = content.attributes;
 
     return (

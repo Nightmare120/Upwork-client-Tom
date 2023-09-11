@@ -6,6 +6,8 @@ import "../components/ToggleButton.css";
 import "../index.css";
 import "../App.css";
 import "./blog/blogPage.css";
+import { DefaultSeo } from "next-seo";
+import SEO from "../next-seo.config";
 
 // import "../globals.css";
 
@@ -13,6 +15,7 @@ import "./blog/blogPage.css";
 export default function MyApp({ Component, pageProps }) {
     return (
         <div className="App  px-8 pt-4 md:px-[80px] md:pt-9 overflow-x-hidden">
+            <DefaultSeo {...SEO} />
             <Navbar />
             <Component {...pageProps} />
             <Footer />

@@ -32,7 +32,7 @@ export default function Banner() {
                         ))}
                 </div>
             </div>
-            <div className="w-full m-5 p-5 justify-center  md:w-[30vw] flex flex-col gap-4">
+            <div className="w-full md:m-5 p-5 justify-center  md:w-[30vw] flex flex-col gap-4">
                 <div className="flex justify-center items-center">
                     <Link href={"/"}>
                         <Image src={Logo} alt="" />

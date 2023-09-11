@@ -3,9 +3,9 @@ import Background from "../../images/PrcingBannerBackground.svg";
 import { useEffect, useState } from "react";
 import { getBannerSection } from "../../api/PricingAPI";
 
-export default function Banner() {
-    let [buttonText, setButtonText] = useState("");
-    let [heading, setHeading] = useState("");
+export default function Banner(props) {
+    let [buttonText, setButtonText] = useState(props.heading);
+    let [heading, setHeading] = useState(props.buttonText);
 
     useEffect(() => {
         let fun = async () => {

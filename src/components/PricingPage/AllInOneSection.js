@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import { getAllInOneSection } from "../../api/PricingAPI";
 // import { useState } from "react";
 
-export default function AllInOne() {
-    let [heading, setHeading] = useState("");
-    let [keyword, setKeyword] = useState("");
-    let [data, setData] = useState(null);
-    let [description, setDescription] = useState("");
+export default function AllInOne(props) {
+    let [heading, setHeading] = useState(props.heading);
+    let [keyword, setKeyword] = useState(props.keyword);
+    let [data, setData] = useState(props.data);
+    let [description, setDescription] = useState(props.description);
 
     useEffect(() => {
         let fun = async () => {
@@ -17,7 +17,6 @@ export default function AllInOne() {
             setHeading(heading);
             setKeyword(keyword);
             setDescription(description);
-            console.log(Data, data);
             setData(data);
         };
         fun();

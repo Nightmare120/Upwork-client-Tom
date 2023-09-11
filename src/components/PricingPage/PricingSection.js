@@ -4,11 +4,11 @@ import SectionHeader from "../SectionHeader";
 import PriceBox from "./PriceBox";
 import { getPricingSection, getPricingSectionText } from "../../api/PricingAPI";
 
-export default function PricingSection() {
-    let [data, setData] = useState(null);
-    let [keyword, setKeyword] = useState("");
-    let [paragraph, setParagraph] = useState("");
-    let [heading, setHeading] = useState("");
+export default function PricingSection(props) {
+    let [data, setData] = useState(props.pricingSectionData);
+    let [keyword, setKeyword] = useState(props.heading);
+    let [paragraph, setParagraph] = useState(props.paragraph);
+    let [heading, setHeading] = useState(props.keyword);
 
     useEffect(() => {
         let func = async () => {

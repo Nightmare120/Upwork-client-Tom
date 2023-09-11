@@ -18,7 +18,6 @@ const Social_Media_Icon = {
 };
 
 export default function BlogHead({ content }) {
-    console.log(content);
     return (
         <div className=" mt-16 flex flex-col gap-5 items-start">
             <Link href={"/blog"}>

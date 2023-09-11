@@ -7,6 +7,7 @@ import VideoSection from "../components/HomePage/VideoSection";
 import WhatYouNeedSection from "../components/HomePage/WhatYouNeedSection";
 import Image from "next/image";
 import SectionHeader from "../components/SectionHeader";
+// import { NextSeo } from "next-seo";
 
 import {
     getAdvantageSection,
@@ -22,6 +23,7 @@ import {
 import StepsSection from "../components/HomePage/StepsSection";
 import HandleText from "../components/HandleText";
 import pattern from "../images/Pattern.svg";
+import HandleSeo from "../components/HandleSeo";
 
 export default function HomePAGE({
     heroSection,
@@ -36,6 +38,7 @@ export default function HomePAGE({
 }) {
     return (
         <>
+            <HandleSeo seo={heroSection.seo} />
             <HeroSection {...heroSection} />
             <VideoSection {...videoSection} />
             <ProblemSection {...problemSection} />
@@ -65,7 +68,6 @@ function ProblemSection(props) {
 
         fun();
     }, []);
-    console.log(pattern);
     return (
         <div className="w-full md:w-[85%] m-auto lg:w-[70vw]">
             <SectionHeader
@@ -148,7 +150,6 @@ export async function getStaticProps() {
     let data7 = await getTestimonialSection();
     let data8 = await getHomePageTrialSection();
 
-    console.log("content fetch");
     // let { Heading, Description, Stats, Botton_button_text } =
     //     ;
     return {

@@ -3,7 +3,7 @@ import { HEADERS, STRAPI_URL } from "./Constant";
 
 export async function getHeroSection() {
     let res = await axios.get(
-        `${STRAPI_URL}/api/pricing-page-hero-section`,
+        `${STRAPI_URL}/api/pricing-page-hero-section?populate=*`,
         HEADERS
     );
     return res.data;

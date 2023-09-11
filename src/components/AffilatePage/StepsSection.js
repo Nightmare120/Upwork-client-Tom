@@ -8,7 +8,6 @@ export default function StepsSection(props) {
     useEffect(() => {
         let fun = async () => {
             let Data = await getStepsSection();
-            console.log("data: ", Data);
             setSteps(Data.data);
         };
 

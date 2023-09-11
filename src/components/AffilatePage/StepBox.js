@@ -14,7 +14,6 @@ export default function StepBox({
     reverse,
     steps,
 }) {
-    console.log("imag fromm aff", image);
     return (
         <>
             <div

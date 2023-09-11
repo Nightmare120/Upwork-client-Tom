@@ -13,7 +13,6 @@ export default function VideoSection(props) {
     useEffect(() => {
         let fun = async () => {
             let Data = await getVideoSection();
-            console.log(Data);
             let { heading, video, logos } = Data.data.attributes;
             setHeading(heading);
             setVideo(video.data);

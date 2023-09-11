@@ -14,6 +14,7 @@ import {
     getTestimonials,
 } from "../api/AffilateAPI";
 import HandleText from "../components/HandleText";
+import HandleSeo from "../components/HandleSeo";
 
 export default function AffilatePAGE({
     heroSection,
@@ -45,6 +46,7 @@ export default function AffilatePAGE({
     }, []);
     return (
         <>
+            <HandleSeo seo={heroSection.seo} />
             <div className="mt-20 lg:mt-32">
                 <div className="w-full md:w-[70vw] m-auto lg:w-[70vw]">
                     <SectionHeader

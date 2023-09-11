@@ -8,15 +8,38 @@ import AllInOne from "../components/PricingPage/AllInOneSection";
 import PricingSection from "../components/PricingPage/PricingSection";
 import TestimonialSection from "../components/HomePage/TestimonialSection";
 import HandleText from "../components/HandleText";
-import { getHeroSection } from "../api/PricingAPI";
+import {
+    getAllInOneSection,
+    getBannerSection,
+    getHeroSection,
+    getPricingSection,
+    getPricingSectionText,
+    getPricingSliderSection,
+    getSupportSection,
+} from "../api/PricingAPI";
 import MonthlyAnnualy from "../components/PricingPage/MonthlyAnnualy";
-import Head from "next/head";
+import { getTestimonialSection } from "../api/HomePageAPI";
+import HandleSeo from "../components/HandleSeo";
 
-export default function PricingPAGE() {
-    let [Heading, setHeading] = useState("");
-    let [ButtonText, setButtonText] = useState("");
-    let [Paragraph, setParagraph] = useState("");
-
+export default function PricingPAGE({
+    heroSection,
+    monthlyAnnualy,
+    pricingSectionData,
+    pricingSectionText,
+    testimonialSection,
+    supportSection,
+    banner,
+    allInOne,
+}) {
+    let [Heading, setHeading] = useState(
+        heroSection ? heroSection.heading : ""
+    );
+    let [ButtonText, setButtonText] = useState(
+        heroSection ? heroSection.buttonText : ""
+    );
+    let [Paragraph, setParagraph] = useState(
+        heroSection ? heroSection.description : ""
+    );
     useEffect(() => {
         let fun = async () => {
             let data = await getHeroSection();
@@ -29,9 +52,7 @@ export default function PricingPAGE() {
     }, []);
     return (
         <>
-            <Head key={"pricing"}>
-                <title>Pricing</title>
-            </Head>
+            <HandleSeo seo={heroSection.seo} />
             <div className="mt-20 lg:mt-32">
                 <div className="w-full md:w-[85vw] m-auto lg:w-[50vw]">
                     <SectionHeader
@@ -53,13 +74,16 @@ export default function PricingPAGE() {
                 </div>
             </div>
 
-            <MonthlyAnnualy />
+            <MonthlyAnnualy {...monthlyAnnualy} />
             <div className="border-b-2 w-full h-2"></div>
-            <PricingSection />
-            <TestimonialSection />
-            <SupportSection />
-            <Banner />
-            <AllInOne />
+            <PricingSection
+                pricingSectionData={pricingSectionData}
+                {...pricingSectionText}
+            />
+            <TestimonialSection data={testimonialSection} />
+            <SupportSection {...supportSection} />
+            <Banner {...banner} />
+            <AllInOne {...allInOne} />
             <FAQSection />
             <div className="flex flex-col justify-center items-center gap-4 my-16">
                 <Button
@@ -79,4 +103,30 @@ underline text-slate-700 "
             </div>
         </>
     );
+}
+
+export async function getStaticProps() {
+    let data = await getHeroSection();
+    let data1 = await getPricingSliderSection();
+    let data3 = await getPricingSection();
+    let data4 = await getPricingSectionText();
+    let data5 = await getTestimonialSection();
+    let data6 = await getSupportSection();
+    let data7 = await getBannerSection();
+    let data8 = await getAllInOneSection();
+
+    return {
+        props: {
+            heroSection: {
+                ...data.data.attributes,
+            },
+            monthlyAnnualy: { ...data1.data.attributes },
+            pricingSectionData: data3.data,
+            pricingSectionText: { ...data4.data.attributes },
+            testimonialSection: data5.data,
+            supportSection: { ...data6.data.attributes },
+            banner: { ...data7.data.attributes },
+            allInOne: { ...data8.data.attributes },
+        },
+    };
 }
