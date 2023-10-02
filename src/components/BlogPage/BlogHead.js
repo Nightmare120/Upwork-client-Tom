@@ -57,15 +57,16 @@ export default function BlogHead({ content }) {
                     </div>
                 </div>
                 <div className="flex gap-3">
-                    {content.social_media_links.map((e, index) => (
-                        <a href={e.link} key={index}>
-                            <Image
-                                height={36}
-                                width={36}
-                                src={Social_Media_Icon[e.type]}
-                            />
-                        </a>
-                    ))}
+                    {content.social_media_links &&
+                        content.social_media_links.map((e, index) => (
+                            <a href={e.link} key={index}>
+                                <Image
+                                    height={36}
+                                    width={36}
+                                    src={Social_Media_Icon[e.type]}
+                                />
+                            </a>
+                        ))}
                 </div>
             </div>
 
