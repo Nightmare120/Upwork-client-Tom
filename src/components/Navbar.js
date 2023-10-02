@@ -39,7 +39,7 @@ export default function Navbar() {
                 <div className="flex h-[40vh] bg-white lg:visible  flex-col  justify-center lg:justify-normal  lg:flex-row lg:static lg:w-max lg:h-max md:gap-5 lg:gap-14 items-center">
                     <Links href={"/pricing"}>Pricing</Links>
                     <Links href={"/partners"}>Partner Program</Links>
-                    <Links href={"/blog"}>Blogs</Links>
+                    {/* <Links href={"/blog"}>Blogs</Links> */}
                 </div>
 
                 <div className="hidden gap-2">
